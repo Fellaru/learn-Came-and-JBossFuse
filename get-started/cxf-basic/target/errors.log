@@ -1,4 +1,0 @@
-2017-05-29 17:24:19,038 [main           ] INFO  SoapTest                       - the response is ====> 
-2017-05-29 17:24:19,040 [main           ] INFO  SoapTest                       - <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:sayHiResponse xmlns:ns2="http://example.fusesource.org/"><return>Hello John Doe</return></ns2:sayHiResponse></soap:Body></soap:Envelope>
-2017-05-29 18:29:27,661 [main           ] INFO  SoapTest                       - the response is ====> 
-2017-05-29 18:29:27,663 [main           ] INFO  SoapTest                       - <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"><soap:Body><ns2:sayHiResponse xmlns:ns2="http://example.fusesource.org/"><return>Hello John Doe</return></ns2:sayHiResponse></soap:Body></soap:Envelope>
