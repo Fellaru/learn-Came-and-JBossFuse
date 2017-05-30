@@ -43,15 +43,6 @@
             <cxf:logging/>
         </cxf:features>
     </cxf:bus>
-	
-	<!-- osgi blueprint property placeholder -->
-    <cm:property-placeholder id="placeholder"
-                             persistent-id="org.fusesource.example.get.started">
-        <cm:default-properties>
-            <cm:property name="portNumber" value="8181"/>
-        </cm:default-properties>
-    </cm:property-placeholder>
-
 
     <!--
       Finally, we're configuring the actual JAX-WS endpoint, referring to our web service implementation class and the URI
@@ -60,7 +51,7 @@
     -->
     <jaxws:endpoint id="helloWorld"
                     implementor="org.fusesource.example.HelloWorldImpl"
-                    address="http://0.0.0.0:${portNumber}/cxf/HelloWorld">
+                    address="/HelloWorld">
     </jaxws:endpoint>
 
 </blueprint>
