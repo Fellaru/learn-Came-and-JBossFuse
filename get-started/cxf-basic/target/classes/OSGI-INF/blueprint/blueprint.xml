@@ -50,7 +50,7 @@
       in place, this endpoint will be available at 'http://localhost:8181/cxf/HelloWorld'.
     -->
     <jaxws:endpoint id="helloWorld"
-                    implementor="org.fusesource.example.HelloWorldImpl"
+                    implementor="org.fusesource.restart.example.HelloWorldImpl"
                     address="/HelloWorld">
     </jaxws:endpoint>
 

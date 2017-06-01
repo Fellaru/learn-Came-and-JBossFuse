@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="camel-basic" />
         <module name="cxf-basic" />
+        <module name="cxf-basic2" />
         <module name="get-started-features" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="camel-basic" target="1.7" />
       <module name="cxf-basic" target="1.7" />
+      <module name="cxf-basic2" target="1.7" />
       <module name="get-started" target="1.5" />
       <module name="get-started (1)" target="1.5" />
       <module name="get-started-features" target="1.5" />

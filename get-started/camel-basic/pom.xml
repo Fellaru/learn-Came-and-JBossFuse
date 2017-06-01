@@ -54,12 +54,11 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-blueprint</artifactId>
     </dependency>
-	<dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-jetty</artifactId>
+    <dependency>
+       <groupId>org.apache.camel</groupId>
+       <artifactId>camel-jetty</artifactId>
     </dependency>
-	</dependencies>
-  
+  </dependencies>
 
     <build>
     <finalName>${project.artifactId}</finalName>

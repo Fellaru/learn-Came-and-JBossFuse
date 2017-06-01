@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 // START SNIPPET: service
-package org.fusesource.example;
+package org.fusesource.restart.example;
 
 import javax.jws.WebService;
 
@@ -23,7 +23,7 @@ import javax.jws.WebService;
  * This is our web service implementation, which implements the web service interface.
  * We also add the @WebService annotation to it to mark this class an implementation for the endpoint interface.
  */
-@WebService(endpointInterface = "org.fusesource.example.HelloWorld")
+@WebService(endpointInterface = "org.fusesource.restart.example.HelloWorld")
 public class HelloWorldImpl implements HelloWorld {
 
     /**

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 // START SNIPPET: service
-package org.fusesource.example;
+package org.fusesource.restart.example;
 
 import javax.jws.WebService;
 

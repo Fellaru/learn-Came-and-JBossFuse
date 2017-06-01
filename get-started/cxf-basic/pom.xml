@@ -24,12 +24,12 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <version.maven-surefire-plugin>2.19.1</version.maven-surefire-plugin>
     <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
-    <cxf-version>3.1.5.redhat-133</cxf-version>
+    <cxf-version>3.1.5.redhat-630187</cxf-version>
     <skipTests>true</skipTests>
 
     <!-- the version of the BOM, defining all the dependency versions -->
-    <fabric8.bom.version>1.2.0.redhat-133</fabric8.bom.version>
-    <fabric.version>1.2.0.redhat-133</fabric.version>
+    <fabric8.bom.version>1.2.0.redhat-630187</fabric8.bom.version>
+    <fabric.version>1.2.0.redhat-630187</fabric.version>
 
     <!-- fabric8 deploy profile configuration -->
     <fabric8.profile>cxf-basic-profile</fabric8.profile>
@@ -75,7 +75,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
     <!--
@@ -126,14 +126,14 @@
               org.apache.cxf.transport.http</Import-Package>
             <Import-Service>org.apache.aries.blueprint.NamespaceHandler;
                 osgi.service.blueprint.namespace=http://cxf.apache.org/transports/http/configuration</Import-Service>
-            <Export-Package>org.fusesource.example</Export-Package>
+            <Export-Package>org.fusesource.restart.example</Export-Package>
           </instructions>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-java2ws-plugin</artifactId>
-        <version>3.1.5.redhat-630187</version>
+        <version>${cxf-version}</version>
         <executions>
           <execution>
             <id>process-classes</id>
@@ -142,7 +142,7 @@
               <goal>java2ws</goal>
             </goals>
             <configuration>
-              <className>org.fusesource.example.HelloWorld</className>
+              <className>org.fusesource.restart.example.HelloWorld</className>
               <genWsdl>true</genWsdl>
               <attachWsdl>false</attachWsdl>
               <verbose>true</verbose>
