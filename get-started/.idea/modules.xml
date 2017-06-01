@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/camel-basic/camel-basic.iml" filepath="$PROJECT_DIR$/camel-basic/camel-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cxf-basic/cxf-basic.iml" filepath="$PROJECT_DIR$/cxf-basic/cxf-basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/get-started.iml" filepath="$PROJECT_DIR$/get-started.iml" />
+      <module fileurl="file://$PROJECT_DIR$/features/get-started-features.iml" filepath="$PROJECT_DIR$/features/get-started-features.iml" />
+    </modules>
+  </component>
+</project>
