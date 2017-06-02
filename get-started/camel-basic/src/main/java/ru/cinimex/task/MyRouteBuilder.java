@@ -1,5 +1,6 @@
 package ru.cinimex.task;
 
+import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
 
 /**
@@ -8,7 +9,8 @@ import org.apache.camel.builder.RouteBuilder;
 public class MyRouteBuilder extends RouteBuilder {
     @Override
     public void configure() throws Exception {
-        from("file://C:/A?noop=false").to("file://C:/B");
+        onException(Exception.class).log(LoggingLevel.ERROR,"EXCEPTION. NOT RUSSIAN");
+        from("file://C:/D?noop=false").to("file://{{result}}");
 
     }
 }
