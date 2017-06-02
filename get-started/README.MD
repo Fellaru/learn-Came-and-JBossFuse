@@ -1,5 +1,4 @@
 Установка приложений
 
-features:addUrl mvn:org.fusesource.example/get-started-features/1.0-SNAPSHOT/xml/features
-features:install get-started-basic
-features:install get-started-cxf
+features:addUrl mvn:ru.cinimex.task/fileMover-features/1.0-SNAPSHOT/xml/features
+features:install fileMover

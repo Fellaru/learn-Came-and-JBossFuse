@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="fileMoverRepo">
+  <feature name="fileMover">
+    <bundle>mvn:ru.cinimex.task/camel-basic/1.0-SNAPSHOT</bundle>
+  </feature>
+</features>

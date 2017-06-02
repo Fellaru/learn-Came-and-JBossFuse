@@ -10,7 +10,7 @@
         1. Установка с запуском: `osgi:install [-s] {UrlList}` или  `install -s mvn:org.fusesource.example/cxf-basic/1.0-SNAPSHOT`
         1. Вывод списка уже установленных bundels ` osgi:list` или `list`
         1. Остановка запушенного бандла `osgi:stop {bundleID}`
-        1. Демонтаж??? ( Uninstall) bundle `osgi:uninstall {bundleID}`
+        1. Удаление ( Uninstall) bundle `osgi:uninstall {bundleID}`
         1. И другие команды в соответствии с lifecycle (Installed// Resolved// Starting// Active// Stopping// Uninstalled) 
                 
 1. Pабота с feature :
@@ -27,7 +27,7 @@
           ```
     1. Add the local repository URL to the features service `features:addUrl {UrlFeaturesRepo}`
     1. Установка feature с консоли `features:install {MyFeatureName}`
-    1. Демонтаж `features:uninstall {MyFeatureName}` 
+    1. Удаление `features:uninstall {MyFeatureName}` 
 1. Основы конфигурации (OSGi Config Admin service)
 
 ## Работа с JBoss Fuse Fabric:
@@ -53,9 +53,9 @@ Fuse Fabric сoстоит из
     2. !!!Одну можно создавать только для обучения. Создаем 3 или больше. НЕЧЕТНОЕ КОЛВО( БОЛЬШЕ ОДНОГО)
     2. Имя созданного контейнера можно конфигурировать в `InstallDirJboss-fuse/etc/system.properties` в строке `karaf.name=NameFabricServer`
     
-    А КАК СОЗДАТЬ FABRIC ANSABLE ?
+   # А КАК СОЗДАТЬ FABRIC ANSABLE ?
        
-1. Создание дочерних контейнеров(managed conteqner) `fabric:container-create-child {parent} {name} [number]  `
+1. Создание дочерних контейнеров(managed conteiner) `fabric:container-create-child {parent} {name} [number]  `
 1. Вывести список дочерних контейнеров  `fabric:container-list`
 1. Остановка дочерних контейнеров `fabric:container-stop {name}` 
 1. Остановка фабрики `shutdown` ! Важно т.к. дочернии контейнеры работают на отдельных JVM остановка fabric server не ведет
@@ -78,7 +78,59 @@ Fuse Fabric сoстоит из
 1.Установка profile в контейнер `fabric:container-change-profile container-1 myProfile`
 
 
+//!!!!ДОРАБОТАТЬ ВОПРОСЫ!!! ВОссоздать в голове структуру всего процесса! ВАЖНО
+!! Fuse 
+Fuse может работать либо в standalone режиме( Одна JVM), либо в Fuse Fabric(Много JVM, несколько маломощных реплицирующих
+ друг друга JVM машин для Fabric Service( С одинаковыми профилями ) и Большее кол во мошных JVM для managed conteiner, 
+ в которых мы будем запускать наше Приложение ( Application) с разными профилями ) Если Fuse fabric уже была создана, 
+то переход в режим стандалон осуществляется особыми манипуляциями ( В разработке Cinimex в основном используется Fuse fabric)
 
+### Blueprint
++ Blueprint предоставляет DI(dependency injection) Фреймвор для OSGI.
++ Bundle становится Blueprint Bundle, если он содержит Blueprint.xml файл в директории  `resources/OSGI-INF/blueprint/`.
++ Blueprint.xml Идентифицируется 
+```$xslt
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    ...
+</blueprint>
+```
++ Конструктор Бинов. Создать instance класса Bean может 3-мя способами
+    1. Используя конструктор класса
+    ```
+    <bean id="accountOne" class="org.apache.aries.simple.Account">
+        <argument value="1"/>
+    </bean>
+    ```
+    2. Используя статический factory method
+    ```$xslt
+    <bean id="accountTwo"
+        class="org.apache.aries.simple.StaticAccountFactory" 
+         factory-method="createAccount">   
+           <argument value="2"/>
+     </bean>
+    ```
+    3. С помощью другого Bean. Сначала при помощи Bean создаем instance одного класса. А после во втором Бине создаем 
+    ```$xslt
+    public class AccountFactory { 
+    
+    public AccountFactory(String factoryName) { ... } 
+    public Account createAccount(long number) { return new Account(number); }
+    }
+    ```
+    ```
+       <bean id="accountFactory"
+        class="org.apache.aries.simple.AccountFactory">  
+           <argument value="account factory"/>  
+       </bean>
+    
+       <bean id="accountThree"
+         factory-ref="accountFactory" 
+         factory-method="createAccount">   
+           <argument value="3"/>
+       </bean>
+    ```
+    
 
 
 

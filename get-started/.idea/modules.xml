@@ -3,11 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/camel-basic/camel-basic.iml" filepath="$PROJECT_DIR$/camel-basic/camel-basic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cxf-basic/cxf-basic.iml" filepath="$PROJECT_DIR$/cxf-basic/cxf-basic.iml" />
       <module fileurl="file://C:\Users\efischenko\Desktop\efischenko-learning\get-started\cxf-basic\cxf-basic.iml" filepath="C:\Users\efischenko\Desktop\efischenko-learning\get-started\cxf-basic\cxf-basic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cxf-basic/cxf-basic2.iml" filepath="$PROJECT_DIR$/cxf-basic/cxf-basic2.iml" />
+      <module fileurl="file://C:\Users\efischenko\Desktop\efischenko-learning\get-started\cxf-basic\cxf-basic2.iml" filepath="C:\Users\efischenko\Desktop\efischenko-learning\get-started\cxf-basic\cxf-basic2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/features/fileMover-features.iml" filepath="$PROJECT_DIR$/features/fileMover-features.iml" />
       <module fileurl="file://$PROJECT_DIR$/get-started.iml" filepath="$PROJECT_DIR$/get-started.iml" />
-      <module fileurl="file://$PROJECT_DIR$/features/get-started-features.iml" filepath="$PROJECT_DIR$/features/get-started-features.iml" />
+      <module fileurl="file://C:\Users\efischenko\Desktop\efischenko-learning\get-started\features\get-started-features.iml" filepath="C:\Users\efischenko\Desktop\efischenko-learning\get-started\features\get-started-features.iml" />
     </modules>
   </component>
 </project>

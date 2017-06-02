@@ -1,0 +1,1 @@
+osgi:install -s mvn:ru.cinimex.task/camel-basic/1.0-SNAPSHOT
