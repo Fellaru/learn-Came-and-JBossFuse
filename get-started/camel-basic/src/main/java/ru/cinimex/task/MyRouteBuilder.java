@@ -29,7 +29,7 @@ public class MyRouteBuilder extends RouteBuilder {
 
         // Camel Route
         from("file://C:/D?noop=false").log(LoggingLevel.INFO, "ToLogFile", "${file:name}")
-                .to("file://" + RESULT_URL);
+                .to("file://{{result}}");
 
     }
 }

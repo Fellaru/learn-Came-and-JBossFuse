@@ -42,13 +42,8 @@ Fuse Fabric сoстоит из
 ####Создание простой фабрики( Single fabric server )
 1. Создание fabric server 
     ```
-    fabric:create --new-user AdminUser
-    --new-user-password AdminPass 
-    --new-user-role Administrator 
-    --resolver manualip
-    --manual-ip 127.0.0.1
-    --zookeeper-password ZooPass
-    --wait-for-provisioning
+    fabric:create --new-user AdminUser --new-user-password AdminPass --new-user-role Administrator --resolver manualip --manual-ip 127.0.0.1 --zookeeper-password ZooPass --wait-for-provisioning
+    fabric:create --wait-for-provisioning
     ```
     2. !!!Одну можно создавать только для обучения. Создаем 3 или больше. НЕЧЕТНОЕ КОЛВО( БОЛЬШЕ ОДНОГО)
     2. Имя созданного контейнера можно конфигурировать в `InstallDirJboss-fuse/etc/system.properties` в строке `karaf.name=NameFabricServer`

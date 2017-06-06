@@ -42,3 +42,14 @@ features:uninstall fileMover
 features:removeurl mvn:ru.cinimex.task/fileMover-features/1.0-SNAPSHOT/xml/features
 
 #Работа с FuseFabric
+При распаковке нового jboss-fuse
+1. Расскоментируйте в C:\jboss-fuse-6.3.0.redhat-254\etc\user.properties
+1. Выполнить пункт Log директория  и Target директория
+`fabric:create --wait-for-provisioning`
+`fabric:container-create-child root child `
+`fabric:container-list`
+`fabric:profile-create --parent jboss-fuse-full myProfile`
+`fabric:profile-edit --repository mvn:ru.cinimex.task/fileMover-features/1.0-SNAPSHOT/xml/features myProfile`
+`fabric:profile-edit --feature fileMover myProfile`
+`fabric:container-change-profile child myProfile`
+ждем инсталяции profile 
