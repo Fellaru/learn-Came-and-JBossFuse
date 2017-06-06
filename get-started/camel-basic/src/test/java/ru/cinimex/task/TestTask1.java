@@ -1,15 +1,18 @@
 package ru.cinimex.task;
 
 
-import org.apache.log4j.Logger;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.*;
-import java.nio.charset.Charset;
-import org.apache.log4j.LogManager;
-
-
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 import static org.junit.Assert.assertTrue;
 
 
@@ -18,97 +21,44 @@ import static org.junit.Assert.assertTrue;
  */
 
 public class TestTask1 {
-    private static final Logger log = Logger.getLogger(TestTask1.class);
+/*    private static final Logger log = Logger.getLogger(TestTask1.class);*/
 
-   private static String sourceDir = "C:/D/";
-   private static String fileName = "test.txt";
-   private static String targetDir = "C:/G/";
-   private static String inContents ="Hello World";
-   private static String outContents;
+    private static final String SOURCE_DIR = "C:/D/";
+    private static final String FILE_NAME = "test.txt";
+    private static final String TARGET_DIR = "C:/G/";
+    private static final String IN_CONTENTS = "Hello World";
+    private static String OUT_CONTENTS;
 
     @Before
     public void setUp() throws IOException {
-        File dir = new File(sourceDir);
-        File test = new File(dir, fileName);
+        File dir = new File(SOURCE_DIR);
+        File test = new File(dir, FILE_NAME);
         if (!dir.exists()) {
             dir.mkdirs();
         }
         test.createNewFile();
         DataOutputStream outStream = new DataOutputStream(new FileOutputStream(test));
-        outStream.writeChars(inContents);
+        outStream.writeChars(IN_CONTENTS);
     }
 
-  /*  @Test
+    @Test
     public void isFileMove() throws IOException {
-        assertTrue(fileMove());
-    }*/
-
-    public boolean fileMove() throws IOException {
-        boolean answer;
-        BufferedReader reader = null;
-        File message = new File(targetDir + fileName);
-        try {
-            reader = new BufferedReader(
-                    new InputStreamReader(
-                            new FileInputStream(message), Charset.forName("UTF-8")));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                outContents ="" + line;
-            }
-            System.out.println(inContents.equals(outContents));
-        } catch (IOException e) {
-            log.info("BufferedReader");
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    log.error("BufferedReader is not close");
-                }
-            }
+        StringBuilder sb = new StringBuilder();
+        List<String> lines = Files.readAllLines(Paths.get(TARGET_DIR + FILE_NAME), StandardCharsets.UTF_16);
+        for (String line : lines) {
+            sb.append(line);
         }
+        OUT_CONTENTS = sb.toString();
 
-
-        if (message.exists()) {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(message));
-            String Contents;
-            while((Contents = bufferedReader.readLine())!= null){
-                String outContents = "";
-                outContents = outContents + Contents;
-                System.out.println(Contents);
-            }
-            if(inContents.equals(Contents)){answer = true;} else answer = false;
-        } else answer = false;
-        return answer;
+        assertTrue(IN_CONTENTS.equals(OUT_CONTENTS));
     }
 
-    public static void main(String[] args) throws IOException {
-        boolean answer;
-        BufferedReader reader = null;
-        File message = new File(targetDir + fileName);
-        try {
-            reader = new BufferedReader(
-                    new InputStreamReader(
-                            new FileInputStream(message), Charset.forName("UTF-8")));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                outContents ="" + line;
-            }
-            System.out.println(inContents == outContents);
-        } catch (IOException e) {
-            log.info("BufferedReader");
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    log.error("BufferedReader is not close");
-                }
-            }
-        }
+}
 
-    }
 
-    }
+
+
+
+
 
 
