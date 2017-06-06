@@ -31,13 +31,13 @@
        <!--http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">-->
 
 
-    <cm:property-placeholder id="myblueprint.placeholder" persistent-id="ru.cinimex.task.camel" update-strategy="reload">
+    <cm:property-placeholder id="myblueprint.placeholder" persistent-id="camel" update-strategy="reload">
         <cm:default-properties>
             <cm:property name="result" value="C:/G"/>
         </cm:default-properties>
     </cm:property-placeholder>
 
-
+   <!-- update-strategy="reload"-->
 
     <!--<bean id="myServiceFactory" class="org.my.MyServiceFactory" init-method="init" destroy-method="destroy">
         <property name="bundleContext" ref="blueprintBundleContext"/>
@@ -54,7 +54,7 @@
 
     <camelContext id="blueprintContext"
                   xmlns="http://camel.apache.org/schema/blueprint">
-        <propertyPlaceholder id="placeholder" location="blueprint:myblueprint.placeholder" />
+       <!-- <propertyPlaceholder id="placeholder" location="blueprint:myblueprint.placeholder" />-->
         <routeBuilder ref="MyRouteBuilder"/>
     </camelContext>
 </blueprint>

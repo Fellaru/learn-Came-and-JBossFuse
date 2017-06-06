@@ -19,7 +19,7 @@ features:install fileMover
 config:edit camel
 config:proplist --pid camel
 config:propset --pid camel result {NewUrl}
-config:update
+
 
 ###Log директория ( где будет создан файл mylog.log)
 Что бы логирование велось в файл mylog.log необходимо
@@ -36,9 +36,6 @@ config:update
 config:edit org.ops4j.pax.logging
 config:proplist --pid org.ops4j.pax.logging
 config:propset --pid org.ops4j.pax.logging log4j.appender.customFileAppender.file {NewUrl}
-
-features:install fileMover
-features:uninstall fileMover
 
 ###Окончание работы со Standalone
 features:uninstall fileMover
