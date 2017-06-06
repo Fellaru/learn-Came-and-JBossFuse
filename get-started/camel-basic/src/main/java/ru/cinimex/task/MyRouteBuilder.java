@@ -1,60 +1,35 @@
 package ru.cinimex.task;
 
-
-
-import org.apache.camel.Exchange;
 import org.apache.camel.LoggingLevel;
-
-
-import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
 import java.io.FileNotFoundException;
-
+import java.io.IOException;
 
 
 /**
  * Created by efischenko on 02.06.2017.
  */
 public class MyRouteBuilder extends RouteBuilder {
+    private String RESULT_URL ="{{result}}";
 
-   Processor myProcessor = new Processor(){
-       @Override
-       public void process(Exchange exchange)
-       {
-           log.info("Called with exchange: " + exchange);
-       }
-   };
+    public void setResultUrl(String newReultURL){
+        this.RESULT_URL = newReultURL;
+    }
 
     @Override
-        public void configure() throws Exception {
-            Mainl ml = new Mainl();
+    public void configure() throws Exception {
+
 
         log.info("please");
         //Exception Handler
-        onException(FileNotFoundException.class).log(LoggingLevel.ERROR,"File not found exception."
-                + " Directory is't exist. Create a directory and try again.");
-        onException(Exception.class).log(LoggingLevel.ERROR,"EXCEPTION");
+        onException(FileNotFoundException.class).log(LoggingLevel.ERROR, "File not found exception."
+                + " Directory or File is't exist. Create a directory and try again.");
+        onException(IOException.class).log(LoggingLevel.ERROR, "IO exception");
+        onException(Exception.class).log(LoggingLevel.ERROR, "EXCEPTION");
 
         // Camel Route
-        from("file://C:/D?noop=false").log(LoggingLevel.INFO, ml.getLogger() ,"Hi")
-                .process(myProcessor).to("log:ru.cinimex?level=INFO").to("file://{{result}}");
+        from("file://C:/D?noop=false").log(LoggingLevel.INFO, "ToLogFile", "${file:name}")
+                .to("file://" + RESULT_URL);
 
     }
-
-
-   /* .to("log:?level=info").to("log:ru.cinimex?level=INFO").*/
-
- /*   process(new Processor() {
-        @Override
-        public void process(Exchange exchange) throws Exception {
-            log.info("HI!");
-        }})
-    */
-
-
-/*.to("log:root?level=info")*/
 }

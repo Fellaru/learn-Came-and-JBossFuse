@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
  */
 
 public class TestTask1 {
-/*    private static final Logger log = Logger.getLogger(TestTask1.class);*/
+
 
     private static final String SOURCE_DIR = "C:/D/";
     private static final String FILE_NAME = "test.txt";
