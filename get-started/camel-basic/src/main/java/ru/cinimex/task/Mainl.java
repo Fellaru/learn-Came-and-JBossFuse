@@ -9,7 +9,8 @@ import org.slf4j.LoggerFactory;
 public class Mainl {
 
     private static Logger logger = LoggerFactory.getLogger(MyRouteBuilder.class);
-    public static void main(String[] args) {
-        logger.info("Hello World");
+
+    public static Logger getLogger() {
+        return logger;
     }
 }
