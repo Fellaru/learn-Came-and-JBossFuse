@@ -1,0 +1,70 @@
+<definitions name="ИМЯ WSDL Документа"
+targetNamespace="http:www.что-то/name.wsdl"
+xmlns="http://schemas.xmlsoap.org/wsdl/"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:tns="targetNamespace">
+
+
+
+<types>
+  data type definitions........
+</types>
+
+
+
+
+<message name="ИмяRequest">
+      <part name="Имя отправляемого параметра" type="xsd:string"/>
+</message>
+
+
+<message name="ИмяResponse">
+      <part name="Имя отправляемого параметра" type="xsd:string"/>
+</message>
+
+
+
+
+<portType name="Имя_portType">
+
+<!---Запрос-ответ fault может не буть и может быть больше одного-->
+      <operation name="имя метода который можно запросить на этом порту">
+         <input message="tns:ИмяRequest"/>
+         <output message="tns:ИмяResponse"/>
+         <fault message="tns:MissingName" name="Cмотри пример в интернете"> 
+      </operation>
+
+
+<!---односторонние операции-->
+<operation name="имя метода который можно запросить на этом порту">
+         <input message="tns:ИмяRequest"/>
+</operation>
+
+
+</portType>
+
+
+
+<binding name="имя_binding" type="tns:Имя_portType">
+   <soap:binding style="document или rpc"
+   transport="http://schemas.xmlsoap.org/soap/http( это значит выбрали через http транспорт осуществлять) defines the SOAP protocol" />
+   <operation>
+     <soap:operation soapAction="http://example.com/getTerm"/>
+     <input><soap:body use=""/></input>
+     <output><soap:body use=""/></output>
+  </operation>
+</binding>
+
+
+
+<service name="имя_Service">
+      <port binding="tns:имя_binding" name="любое_имя">
+         <soap:address
+            location="http://localhost:8083/SayHello/(реальный адрес сервиса)" />
+      </port>
+</service>
+
+
+
+
+</definitions>
