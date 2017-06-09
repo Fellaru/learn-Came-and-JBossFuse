@@ -1,0 +1,46 @@
+<definitions name="phonebookWSDL"
+   targetNamespace="http://learn.cinimex.ru/"
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns="http://learn.cinimex.ru/"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ 
+   <message name="Request">
+      <part name="lastName" type="xsd:string"/>
+      <part name="firstName" type="xsd:string"/>
+      <part name="middleName" type="xsd:string"/>
+   </message>
+	
+   <message name="Response">
+      <part name="phone" type="xsd:int"/>
+   </message>
+
+   <portType name="phonebookWS">
+      <operation name="getPhineByFIO">
+         <input message="tns:Request"/>
+         <output message="tns:Response"/>
+      </operation>
+   </portType>
+
+   <binding name="Name_Binding" type="tns:phonebookWS">
+      <soap:binding style="rpc"
+         transport="http://schemas.xmlsoap.org/soap/http"/>
+      <operation name="getPhineByFIO">
+         <soap:operation soapAction="getPhineByFIO"/>
+         <input>
+            <soap:body use="literal" />
+         </input>
+		
+         <output>
+            <soap:body use="literal" />
+         </output>
+      </operation>
+   </binding>
+
+   <service name="phonebookWS_Client">
+      <port binding="tns:Name_Binding" name="Namechegoto">
+         <soap:address
+            location="http://localhost:9093/phonebookWS/" />
+      </port>
+   </service>
+</definitions>

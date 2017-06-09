@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions  name="customerWS" targetNamespace="http://learn.cinimex.ru/service"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://learn.cinimex.ru/service"
+    xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cust="http://learn.cinimex.ru/customer">
+
+    <types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://learn.cinimex.ru/customer" schemaLocation="xsd/customer.xsd"/>
+        </xs:schema>
+    </types>
+
+
+
+
+
+    <message name="createRequest">
+        <part name="Date_for_Customer" type="cust:customers"></part>
+    </message>
+
+    <message name="createResponse">
+        <part name="customer" type="cust:customerBDlist"></part>
+    </message>
+
+
+    <message name="getRequest">
+        <part name="Phone" type="cust:phoneList"></part>
+    </message>
+
+    <message name="getResponse">
+        <part name="customer" type="cust:customerBDlist"></part>
+    </message>
+
+
+
+
+
+    <portType name="customerWS">
+        <operation name="createCustomer">
+            <input message="tns:createRequest"></input>
+            <output message="tns:createResponse"></output>
+        </operation>
+        <operation name="getCustomerByPhone">
+            <input message="tns:getRequest"></input>
+            <output message="tns:getResponse"></output>
+        </operation>
+    </portType>
+
+
+
+
+    <binding name="Name_Binding" type="tns:customerWS">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="createCustomer">
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+
+        <operation name="getCustomerByPhone">
+            <input>
+                <soap:body use="literal" />
+            </input>
+            <output>
+                <soap:body use="literal" />
+            </output>
+        </operation>
+    </binding>
+
+
+
+    <service name="customerWS_ServiceClient">
+        <port name="customerWS_Port" binding="tns:Name_Binding">
+            <soap:address
+                location="http://localhost:8083/customerWS" />
+        </port>
+    </service>
+</definitions>
