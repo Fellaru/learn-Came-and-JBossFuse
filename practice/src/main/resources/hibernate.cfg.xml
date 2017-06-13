@@ -30,9 +30,8 @@
 
         <!--new session for new thread-->
         <property name="hibernate.current_session_context_class">thread</property>
-
-        <!--mapping-->
-        <mapping class="ru.cinimex.learn.MY.customer.CustomerType"/>
-
+        <!-- Annotated entity classes -->
+        <mapping class="ru.cinimex.learn.entity.CustomerType"/>
+        
     </session-factory>
 </hibernate-configuration>

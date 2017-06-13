@@ -13,6 +13,10 @@
 
         <junit.version>4.12</junit.version>
         <cxf.version>3.1.7</cxf.version>
+        <hibernate.version>5.2.3.Final</hibernate.version>
+        <postgresql.version>9.3-1102-jdbc41</postgresql.version>
+
+
 
         <jetty-maven-plugin.version>9.4.0.M0</jetty-maven-plugin.version>
 
@@ -47,46 +51,71 @@
     <!--Hibernate-->
     <dependency>
         <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-core</artifactId>
-        <version>5.2.10.Final</version>
+        <artifactId>hibernate-entitymanager</artifactId>
+        <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>${postgresql.version}</version>
     </dependency>
 
-
-
-   <!-- &lt;!&ndash; CXF &ndash;&gt;
+    <!--&lt;!&ndash; hibernate-osgi &ndash;&gt;
     <dependency>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-rt-frontend-jaxws</artifactId>
-        <version>${cxf.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-rt-transports-http</artifactId>
-        <version>${cxf.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.cxf</groupId>
-        &lt;!&ndash; Jetty is needed if you're are not using the CXFServlet &ndash;&gt;
-        <artifactId>cxf-rt-transports-http-jetty</artifactId>
-        <version>${cxf.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-rt-databinding-aegis</artifactId>
-        <version>3.1.5.redhat-630254</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.cxf</groupId>
-        <artifactId>cxf-rt-databinding-aegis</artifactId>
-        <version>3.1.5.redhat-630254</version>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-osgi</artifactId>
+        <version>5.2.8.Final</version>
     </dependency>-->
+
+
+    <!--Test-->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+    </dependency>
+
+
+    <!-- &lt;!&ndash; CXF &ndash;&gt;
+     <dependency>
+         <groupId>org.apache.cxf</groupId>
+         <artifactId>cxf-rt-frontend-jaxws</artifactId>
+         <version>${cxf.version}</version>
+     </dependency>
+     <dependency>
+         <groupId>org.apache.cxf</groupId>
+         <artifactId>cxf-rt-transports-http</artifactId>
+         <version>${cxf.version}</version>
+     </dependency>
+     <dependency>
+         <groupId>org.apache.cxf</groupId>
+         &lt;!&ndash; Jetty is needed if you're are not using the CXFServlet &ndash;&gt;
+         <artifactId>cxf-rt-transports-http-jetty</artifactId>
+         <version>${cxf.version}</version>
+     </dependency>
+     <dependency>
+         <groupId>org.apache.cxf</groupId>
+         <artifactId>cxf-rt-databinding-aegis</artifactId>
+         <version>3.1.5.redhat-630254</version>
+     </dependency>
+     <dependency>
+         <groupId>org.apache.cxf</groupId>
+         <artifactId>cxf-rt-databinding-aegis</artifactId>
+         <version>3.1.5.redhat-630254</version>
+     </dependency>-->
 </dependencies>
 
-    <build>
+   <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+
             </plugin>
             <plugin>
                 <groupId>org.apache.cxf</groupId>
