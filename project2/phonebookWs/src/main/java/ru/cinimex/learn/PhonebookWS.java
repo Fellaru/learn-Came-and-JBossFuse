@@ -12,12 +12,12 @@ import javax.jws.soap.SOAPBinding;
  * Generated source version: 3.1.5.redhat-630254
  * 
  */
-@WebService(targetNamespace = "http://learn.cinimex.ru/", name = "phonebookWS")
+@WebService(targetNamespace = "http://ru.cinimex.learn.cinimex.ru/", name = "phonebookWS")
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public interface PhonebookWS {
 
     @WebMethod(action = "getPhineByFIO")
-    @WebResult(name = "phone", targetNamespace = "http://learn.cinimex.ru/", partName = "phone")
+    @WebResult(name = "phone", targetNamespace = "http://ru.cinimex.learn.cinimex.ru/", partName = "phone")
     public int getPhineByFIO(
         @WebParam(partName = "lastName", name = "lastName")
         java.lang.String lastName,

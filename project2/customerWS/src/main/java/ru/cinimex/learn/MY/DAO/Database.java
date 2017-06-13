@@ -1,4 +1,4 @@
-package ru.cinimex.learn.MY.DAO;
+package ru.cinimex.learn.MY.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
-
 import java.util.function.Consumer;
 import java.util.function.Function;
 

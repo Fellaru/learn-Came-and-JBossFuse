@@ -32,7 +32,7 @@
         <property name="hibernate.current_session_context_class">thread</property>
 
         <!--mapping-->
-        <mapping class="ru.cinimex.learn.MY.customer.CustomerType"/>
+        <mapping class="ru.cinimex.learn.MY.entity.CustomerType"/>
 
     </session-factory>
 </hibernate-configuration>

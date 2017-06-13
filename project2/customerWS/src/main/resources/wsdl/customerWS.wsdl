@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<definitions  name="customerWS" targetNamespace="http://learn.cinimex.ru/service"
-    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://learn.cinimex.ru/service"
-    xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cust="http://learn.cinimex.ru/customer">
+<definitions  name="customerWS" targetNamespace="http://ru.cinimex.learn.cinimex.ru/service"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ru.cinimex.learn.cinimex.ru/service"
+    xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:cust="http://ru.cinimex.learn.cinimex.ru/customer">
 
     <types>
         <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-            <xsd:import namespace="http://learn.cinimex.ru/customer" schemaLocation="xsd/customer.xsd"/>
+            <xsd:import namespace="http://ru.cinimex.learn.cinimex.ru/customer" schemaLocation="xsd/customer.xsd"/>
         </xs:schema>
     </types>
 

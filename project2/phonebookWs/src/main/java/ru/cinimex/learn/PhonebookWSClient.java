@@ -16,13 +16,13 @@ import javax.xml.ws.Service;
  */
 @WebServiceClient(name = "phonebookWS_Client", 
                   wsdlLocation = "file:/C:/Users/efischenko/Desktop/efischenko-learning/project2/phonebookWs/src/main/resources/wsdl/phonebook.wsdl",
-                  targetNamespace = "http://learn.cinimex.ru/") 
+                  targetNamespace = "http://ru.cinimex.learn.cinimex.ru/")
 public class PhonebookWSClient extends Service {
 
     public final static URL WSDL_LOCATION;
 
-    public final static QName SERVICE = new QName("http://learn.cinimex.ru/", "phonebookWS_Client");
-    public final static QName Namechegoto = new QName("http://learn.cinimex.ru/", "Namechegoto");
+    public final static QName SERVICE = new QName("http://ru.cinimex.learn.cinimex.ru/", "phonebookWS_Client");
+    public final static QName Namechegoto = new QName("http://ru.cinimex.learn.cinimex.ru/", "Namechegoto");
     static {
         URL url = null;
         try {

@@ -1,8 +1,8 @@
 <definitions name="phonebookWSDL"
-   targetNamespace="http://learn.cinimex.ru/"
+   targetNamespace="http://ru.cinimex.learn.cinimex.ru/"
    xmlns="http://schemas.xmlsoap.org/wsdl/"
    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-   xmlns:tns="http://learn.cinimex.ru/"
+   xmlns:tns="http://ru.cinimex.learn.cinimex.ru/"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  
    <message name="Request">

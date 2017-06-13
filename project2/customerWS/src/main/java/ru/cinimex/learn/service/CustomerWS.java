@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlSeeAlso;
  * Generated source version: 3.1.5.redhat-630254
  * 
  */
-@WebService(targetNamespace = "http://learn.cinimex.ru/service", name = "customerWS")
+@WebService(targetNamespace = "http://ru.cinimex.learn.cinimex.ru/service", name = "customerWS")
 @XmlSeeAlso({ru.cinimex.learn.customer.ObjectFactory.class})
 @SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
 public interface CustomerWS {

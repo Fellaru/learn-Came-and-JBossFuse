@@ -18,7 +18,7 @@
         </dependency>
     </dependencies>
 
-    <groupId>ru.cinimex.learn</groupId>
+    <groupId>ru.cinimex.ru.cinimex.learn</groupId>
     <artifactId>phonebookWS</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>

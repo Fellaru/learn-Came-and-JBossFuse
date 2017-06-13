@@ -10,7 +10,7 @@ import javax.xml.namespace.QName;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the ru.cinimex.learn.customer package. 
+ * generated in the ru.cinimex.ru.cinimex.learn.customer package.
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -24,10 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _Customer_QNAME = new QName("http://learn.cinimex.ru/customer", "customer");
+    private final static QName _Customer_QNAME = new QName("http://ru.cinimex.learn.cinimex.ru/customer", "customer");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: ru.cinimex.learn.customer
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: ru.cinimex.ru.cinimex.learn.customer
      * 
      */
     public ObjectFactory() {
@@ -77,7 +77,7 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link CustomerType }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://learn.cinimex.ru/customer", name = "customer")
+    @XmlElementDecl(namespace = "http://ru.cinimex.learn.cinimex.ru/customer", name = "customer")
     public JAXBElement<CustomerType> createCustomer(CustomerType value) {
         return new JAXBElement<CustomerType>(_Customer_QNAME, CustomerType.class, null, value);
     }

@@ -1,9 +1,9 @@
-package ru.cinimex.learn.MY.DAO;
+package ru.cinimex.learn.MY.dao;
 
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.hibernate.Session;
-import ru.cinimex.learn.MY.customer.CustomerType;
+import ru.cinimex.learn.MY.entity.CustomerType;
 
 import java.util.List;
 
