@@ -1,21 +1,10 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
 <definitions name="phonebookWSDL"
-   targetNamespace="http://learn.cinimex.ru/"
+   targetNamespace="http://learn.cinimex.ru/PhonebookWS"
    xmlns="http://schemas.xmlsoap.org/wsdl/"
    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-   xmlns:tns="http://learn.cinimex.ru/"
+   xmlns:tns="http://learn.cinimex.ru/PhonebookWS"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <!-- Type definitions for input- and output parameters for webservice -->
-   <!--<types>
-      <xsd:schema targetNamespace="http://learn.cinimex.ru">
-         <xsd:element type="xsd:string" name="partName" />
-         <xsd:element type="xsd:int" name="amount" />
-         <xsd:element type="xsd:string" name="customerName" />
-         <xsd:element type="xsd:string" name="resultCode" />
-      </xsd:schema>
-   </types>-->
-
-   <!-- Message definitions for input and output -->
+ 
    <message name="Request">
       <part name="lastName" type="xsd:string"/>
       <part name="firstName" type="xsd:string"/>
@@ -26,15 +15,14 @@
       <part name="phone" type="xsd:int"/>
    </message>
 
-   <!-- Port (interface) definitions -->
-   <portType name="phoneBookService">
+   <portType name="IPhonebookWS">
       <operation name="getPhoneByFIO">
          <input message="tns:Request"/>
          <output message="tns:Response"/>
       </operation>
    </portType>
 
-   <binding name="Name_Binding" type="tns:phoneBookService">
+   <binding name="Name_Binding" type="tns:IPhonebookWS">
       <soap:binding style="document"
          transport="http://schemas.xmlsoap.org/soap/http"/>
       <operation name="getPhoneByFIO">
@@ -49,10 +37,10 @@
       </operation>
    </binding>
 
-   <service name="phonebookWS_Client">
-      <port binding="tns:Name_Binding" name="phoneBookServiceImpl">
+   <service name="phonebook_ServiceClient">
+      <port binding="tns:Name_Binding" name="PhonebookWS">
          <soap:address
-            location="http://localhost:9181/cxf/phoneFIO/" />
+            location="http://localhost:8181/cxf/phonebookWS/" />
       </port>
    </service>
 </definitions>
