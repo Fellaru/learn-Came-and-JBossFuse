@@ -1,4 +1,0 @@
-https://www.ibm.com/developerworks/ru/library/j-jws20/index.html#fig1
-https://www.ibm.com/developerworks/ru/edu/ws-jax/index.html
-https://www.w3schools.com/xml/xml_wsdl.asp
-https://www.tutorialspoint.com/wsdl/wsdl_binding.htm

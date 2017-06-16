@@ -2,39 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>ru.cinimex.learn</groupId>
-    <artifactId>CustomerWS</artifactId>
+    <artifactId>Database</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>bundle</packaging>
-
 
     <properties>
         <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
-        <camel_blueprint.version>2.19.0</camel_blueprint.version>
-        <camel_cxf.version>2.19.0</camel_cxf.version>
+        <junit.version>4.12</junit.version>
+        <hibernate.version>5.2.4.Final</hibernate.version>
+        <postgresql.version>9.3-1102-jdbc41</postgresql.version>
+        <test.version>4.12</test.version>
         <slf4j.version>1.7.21</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
-        <jax-ws.version>3.1.11</jax-ws.version>
-        <fuse.version>3.1.5.redhat-630187</fuse.version>
     </properties>
 
-
     <dependencies>
-        <!--Blueprint-->
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-blueprint</artifactId>
-            <version>${camel_blueprint.version}</version>
-        </dependency>
-        <!-- CXF -->
-        <dependency>
-            <groupId>org.apache.camel</groupId>
-            <artifactId>camel-cxf</artifactId>
-            <version>${camel_cxf.version}</version>
-        </dependency>
-        <!-- CXF using slf4j -->
         <!--Logging-->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -51,50 +35,37 @@
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-        <!-- using Jetty with CXF -->
+
+        <!--Hibernate-->
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http-jetty</artifactId>
-            <version>${jax-ws.version}</version>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
         </dependency>
-        <!-- explicit dependency to exclude asm:asm:3.3.1 -->
+        <!-- Driver PostgreSQL  -->
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-frontend-jaxws</artifactId>
-            <version>${jax-ws.version}</version>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
         </dependency>
 
+        <!-- hibernate-osgi -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-osgi</artifactId>
+            <version>5.2.8.Final</version>
+        </dependency>
+
+        <!--Test-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${test.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-
-
     <build>
         <plugins>
-            <!--wsdl2java-->
-            <plugin>
-                <groupId>org.apache.cxf</groupId>
-                <artifactId>cxf-codegen-plugin</artifactId>
-                <version>${fuse.version}</version>
-                <executions>
-                    <execution>
-                        <id>generate-sources</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <sourceRoot>${project.basedir}/target/generated-sources/jaxws</sourceRoot>
-                            <wsdlOptions>
-                                <wsdlOption>
-                                    <wsdl>${project.basedir}/src/main/resources/wsdl/customerWS.wsdl</wsdl>
-                                    <!--<extraargs>
-                                        <extraarg>-impl</extraarg>
-                                    </extraargs>-->
-                                </wsdlOption>
-                            </wsdlOptions>
-                        </configuration>
-                        <goals>
-                            <goal>wsdl2java</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
             <!-- Compiler plugin enforces Java 1.8 compatibility and activates annotation processors -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -130,12 +101,5 @@
     </build>
 
 
+
 </project>
-
-
-
-
-
-
-
-
