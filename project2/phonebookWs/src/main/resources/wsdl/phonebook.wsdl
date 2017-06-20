@@ -27,7 +27,7 @@
     </message>
 
     <message name="Response">
-        <part name="phone" type="xsd:int"/>
+        <part name="phone" type="xsd:string"/>
     </message>
 
     <portType name="IPhonebookWS">
@@ -39,7 +39,7 @@
 
     <binding name="Name_Binding" type="tns:IPhonebookWS">
         <soap:binding style="document"
-                      transport="http://schemas.xmlsoap.org/soap/http"/>
+                      transport="http://www.w3.org/2010/soapjms/"/>
         <operation name="getPhoneByFIO">
             <soap:operation soapAction="getPhoneByFIO"/>
             <input>
@@ -59,3 +59,11 @@
         </port>
     </service>
 </definitions>
+<!--"jms:jndi:GETPHONEBYFIO.INPUT?deliveryMode=NON_PERSISTENT&receiveTimout=5000&replyToName="jms:jndi:GETPHONEBYFIO.OUTPUT""-->
+<!--
+               location=
+                            "jms:jndi:dynamicQueues/GETPHONEBYFIO.INPUT"
+            + "?jndiInitialContextFactory=org.apache.activemq.jndi.ActiveMQInitialContextFactory"
+            +"&jndiConnectionFactoryName=ConnectionFactory"
+            +"&jndiURL=tcp://localhost:61616" />
+            -->

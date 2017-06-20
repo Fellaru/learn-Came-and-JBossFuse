@@ -2,21 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>task2</artifactId>
+        <groupId>ru.cinimex.learn</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.cinimex.learn</groupId>
-    <artifactId>CustomerWS</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>Route</artifactId>
     <packaging>bundle</packaging>
-
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <version.maven-bundle-plugin>2.3.7</version.maven-bundle-plugin>
         <camel_blueprint.version>2.19.0</camel_blueprint.version>
-        <camel_cxf.version>2.19.0</camel_cxf.version>
+        <camel_cxf.version>2.12.0</camel_cxf.version>
         <slf4j.version>1.7.21</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
-        <jax-ws.version>3.1.11</jax-ws.version>
         <fuse.version>3.1.5.redhat-630187</fuse.version>
     </properties>
 
@@ -28,12 +30,12 @@
             <artifactId>camel-blueprint</artifactId>
             <version>${camel_blueprint.version}</version>
         </dependency>
-      <!--  &lt;!&ndash; CXF &ndash;&gt;
+        <!-- CXF -->
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-cxf</artifactId>
             <version>${camel_cxf.version}</version>
-        </dependency>-->
+        </dependency>
         <!-- CXF using slf4j -->
         <!--Logging-->
         <dependency>
@@ -51,21 +53,19 @@
             <artifactId>log4j</artifactId>
             <version>${log4j.version}</version>
         </dependency>
-        <!-- using Jetty with CXF -->
+        <!--Camel-->
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-transports-http-jetty</artifactId>
-            <version>${jax-ws.version}</version>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-core</artifactId>
+            <version>${camel_cxf.version}</version>
         </dependency>
-        <!-- explicit dependency to exclude asm:asm:3.3.1 -->
         <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-rt-frontend-jaxws</artifactId>
-            <version>${jax-ws.version}</version>
+            <groupId>ru.cinimex.learn</groupId>
+            <artifactId>Database</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
     </dependencies>
-
 
     <build>
         <plugins>
@@ -83,9 +83,9 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${project.basedir}/src/main/resources/wsdl/customerWS.wsdl</wsdl>
-                                    <extraargs>
+                                    <!--<extraargs>
                                         <extraarg>-impl</extraarg>
-                                    </extraargs>
+                                    </extraargs>-->
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
@@ -129,13 +129,4 @@
         </plugins>
     </build>
 
-
 </project>
-
-
-
-
-
-
-
-

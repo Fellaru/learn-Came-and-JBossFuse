@@ -14,7 +14,7 @@ import static org.junit.Assert.assertTrue;
  * Created by efischenko on 13.06.2017.
  */
 public class CustomerDaoTest {
-    private static CustomerDao customerDao;
+    private static ICustomerDao customerDao;
     private static Customer customer;
     private static int customersBeforeTest;
     private static String firstName = "Ella";
@@ -24,21 +24,20 @@ public class CustomerDaoTest {
 
 @BeforeClass
 public static void setUp() throws Exception {
-    Database.setUp();
-     customerDao = CustomerDao.getInstance();
+     customerDao = new CustomerDao();
      firstName = "Lolita " + new Random().nextInt(999999);
      customer = new Customer().setFirstName(firstName).setLastName(lastName).setPhone(phone);
-     customersBeforeTest = customerDao.getAll(Database.session()).size();
-     Database.execTransactionalConsumer(s -> customerDao.insert(s, customer));
+     customersBeforeTest = customerDao.getAll().size();
+    customerDao.insert(customer);
 }
 
     @Test
     public void getAllTest() throws Exception {
-        assertTrue(customerDao.getAll(Database.session()).size() > 0);
+        assertTrue(customerDao.getAll().size() > 0);
     }
 
     @Test
     public void insertTest() throws Exception {
-        assertEquals(customersBeforeTest + 1, customerDao.getAll(Database.session()).size());
+        assertEquals(customersBeforeTest + 1, customerDao.getAll().size());
     }
 }

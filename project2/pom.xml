@@ -16,6 +16,7 @@
         <module>PhonebookWS</module>
         <module>features</module>
         <module>Database</module>
+        <module>Route</module>
     </modules>
 
 

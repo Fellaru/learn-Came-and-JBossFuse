@@ -20,4 +20,9 @@
         </jaxws:properties>
     </jaxws:endpoint>
     <bean id="CustomerWS" class="ru.cinimex.learn.customerws.service.CustomerWSImpl"/>
+
+    <!--<bean id="CustomerDAO" class="CustomerDAO"/>
+    <service id="fd" interface="ICustoerDAO" ref="CustomerDAO"/>-->
+
+   <!-- <reference id="dao" interface="ICustoerDAO"/>-->
 </blueprint>
