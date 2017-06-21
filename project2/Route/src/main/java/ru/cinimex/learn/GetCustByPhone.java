@@ -5,7 +5,6 @@ import org.apache.camel.Processor;
 import ru.cinimex.learn.customerws.customer.Customers;
 
 
-
 /**
  * Created by efischenko on 20.06.2017.
  */

@@ -26,6 +26,12 @@ public class Customer {
     protected Long phone;
     @Column(name = "email", length = 50)
     protected String email;
+    @Column(name = "customerStatus", length = 50)
+    protected String CustomerStatus;
+
+
+
+
 
     public Customer() {
     }
@@ -83,6 +89,13 @@ public class Customer {
         return id;
     }
 
+    public String getCustomerStatus() {
+        return CustomerStatus;
+    }
+
+    public void setCustomerStatus(String customerStatus) {
+        CustomerStatus = customerStatus;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

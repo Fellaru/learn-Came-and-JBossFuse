@@ -15,6 +15,12 @@ public class CustomerDao implements ICustomerDao{
     private static Session session ;
     private static final Logger log = LoggerFactory.getLogger(CustomerDao.class);
 
+    public String create (String customer){
+        Customer cust =new Customer();
+        cust.setCustomerStatus("Create");
+        return null;
+        //TODO подумать насчет этого метода
+    }
 
     public List<Customer> getAll() {
         List<Customer> customers = new ArrayList<>();
