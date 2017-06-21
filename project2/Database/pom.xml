@@ -86,7 +86,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
-                        <Export-Package>${groupId}.*</Export-Package>
+                        <Export-Package>${groupId}.*,ru.cinimex.learn.dao.ICustomerDao</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>

@@ -2,10 +2,12 @@ package ru.cinimex.learn;
 
 import org.apache.camel.builder.RouteBuilder;
 
+
 /**
  * Created by efischenko on 20.06.2017.
  */
 public class MyRoute extends RouteBuilder {
+
     @Override
     public void configure() throws Exception {
         from("cxf:bean:customer_ws").choice()

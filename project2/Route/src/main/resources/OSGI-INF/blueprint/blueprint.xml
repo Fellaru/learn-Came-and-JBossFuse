@@ -15,17 +15,17 @@
     <camelContext id="camelCustomer_ws" xmlns="http://camel.apache.org/schema/blueprint">
         <routeBuilder ref="cxfRoutes"/>
     </camelContext>
-    <bean id="cxfRoutes" class="ru.cinimex.learn.MyRoute"/>
     <reference id="CustomerDAO"
                interface="ru.cinimex.learn.dao.ICustomerDao"/>
-    <bean id="createCust" class="ru.cinimex.learn.CreateCustomer">
-        <property name="iCustomerDao" ref="CustomerDAO"/>
-    </bean>
-    <bean id="getCustByPh" class="ru.cinimex.learn.GetCustByPhone">
+
+    <bean id="client"
+          class="ru.cinimex.learn.Client"
+          init-method="init">
         <property name="iCustomerDao" ref="CustomerDAO"/>
     </bean>
 
-
+    <bean id="cxfRoutes" class="ru.cinimex.learn.MyRoute">
+    </bean>
 
 </blueprint>
 

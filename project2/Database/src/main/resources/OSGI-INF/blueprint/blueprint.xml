@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
 
-    <bean id="CustomerDAO" class="ru.cinimex.learn.dao.CustomerDao"/>
-    <service ref="CustomerDAO" interface="ru.cinimex.learn.dao.ICustomerDao"/>
+    <bean id="customerDAO" class="ru.cinimex.learn.dao.CustomerDao"/>
+    <service ref="customerDAO" interface="ru.cinimex.learn.dao.ICustomerDao"/>
 
 </blueprint>

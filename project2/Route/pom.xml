@@ -114,6 +114,7 @@
                 <configuration>
                     <instructions>
                         <Export-Package>${project.groupId}.*</Export-Package>
+                        <Import-Package>ru.cinimex.learn.dao, *</Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
