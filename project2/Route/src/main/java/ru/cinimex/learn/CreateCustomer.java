@@ -15,6 +15,7 @@ public class CreateCustomer implements Processor {
 
     @Override
     public void process(Exchange exchange) throws Exception {
+
         Object[] args = exchange.getIn().getBody(Object[].class);
         Customers dateForCustomer = (Customers) args[0];
         exchange.getOut().setBody(dateForCustomer);

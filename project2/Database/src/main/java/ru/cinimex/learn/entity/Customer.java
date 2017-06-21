@@ -93,8 +93,9 @@ public class Customer {
         return CustomerStatus;
     }
 
-    public void setCustomerStatus(String customerStatus) {
+    public Customer setCustomerStatus(String customerStatus) {
         CustomerStatus = customerStatus;
+        return this;
     }
     @Override
     public boolean equals(Object o) {
