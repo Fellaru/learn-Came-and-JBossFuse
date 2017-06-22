@@ -25,7 +25,9 @@
         <routeBuilder ref="cxfRoutes"/>
     </camelContext>
 
-    <bean id="cxfRoutes" class="ru.cinimex.learn.MyRoute">
+    <bean id="cxfRoutes" class="ru.cinimex.learn.MyRoute"/>
+
+    <bean id="GetCustByPhone" class="ru.cinimex.learn.GetCustByPhone">
         <property name="iCustomerDao" ref="CustomerDao"/>
     </bean>
 </blueprint>
