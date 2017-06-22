@@ -26,6 +26,8 @@ public class Customer {
     protected Long phone;
     @Column(name = "email", length = 50)
     protected String email;
+    @Column(name ="status", length = 50)
+    protected String status;
 
     public Customer() {
     }
@@ -81,6 +83,14 @@ public class Customer {
 
     public Integer getId() {
         return id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
