@@ -4,8 +4,9 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import ru.cinimex.learn.customerws.customer.CustomerType;
 import ru.cinimex.learn.customerws.customer.Customers;
+import ru.cinimex.learn.dao.ICustomerDao;
 
-import java.util.Iterator;
+
 import java.util.List;
 import java.util.Random;
 
@@ -14,24 +15,23 @@ import java.util.Random;
  * Created by efischenko on 20.06.2017.
  */
 public class CreateCustomer implements Processor {
+    public ICustomerDao iCustomerDao;
+    private List<CustomerType> customers;
+
     @Override
     public void process(Exchange exchange) throws Exception {
         Object[] args = exchange.getIn().getBody(Object[].class);
         Customers dateForCustomer = (Customers) args[0];
-        List<CustomerType> customers = dateForCustomer.getCustomers();
+        customers = dateForCustomer.getCustomers();
 
+        for (CustomerType c : customers) {
+            //TODO сделать проверку на id а то не вставиться и вернуть SoapFault(или статус eror)
+            if(!isEmailValid(c.getEmail())) c.setEmail(null);
+            /* c = Converter(iCustomerDao.insert(c));*/
+            c.setCustomerStatus("ImitationCreate");
+    }
 
-        Iterator<CustomerType> iterator = customers.iterator();
-        while (iterator.hasNext()){
-            CustomerType customerType = iterator.next();
-            customerType.setCustomerStatus("It work ");
-
-        }
         exchange.getOut().setBody(dateForCustomer);
-
-
-
-
     }
 
 
