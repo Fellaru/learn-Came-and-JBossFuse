@@ -14,5 +14,5 @@ import java.util.List;
 
     public void insert( Customer customer);
 
-    public Customer getByPhone(Integer phone);
+    public Customer getByPhone(Long phone);
 }

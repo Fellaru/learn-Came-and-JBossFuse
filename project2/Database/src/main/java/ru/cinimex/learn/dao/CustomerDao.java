@@ -50,7 +50,7 @@ public class CustomerDao implements ICustomerDao{
     }
 
 
-    public Customer getByPhone(Integer phone) {
+    public Customer getByPhone(Long phone) {
         Customer customer;
         try {
             session = Database.session();
