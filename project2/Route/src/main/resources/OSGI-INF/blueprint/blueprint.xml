@@ -6,27 +6,24 @@
              http://www.osgi.org/xmlns/blueprint/v1.0.0 https://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
              http://camel.apache.org/schema/blueprint/cxf http://camel.apache.org/schema/cxf/camel-cxf-blueprint.xsd
              http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+
+    <reference id="CustomerDao" interface="ru.cinimex.learn.dao.ICustomerDao"/>
+
     <cxf:cxfEndpoint id="customer_ws"
                      address="/CustomerZZ"
                      wsdlURL="wsdl/customerWS.wsdl"
                      serviceClass="ru.cinimex.learn.customerws.service.ICustomerWS"
                      xmlns:c="http://learn.cinimex.ru/CustomerWS/service"/>
 
+
     <camelContext id="camelCustomer_ws" xmlns="http://camel.apache.org/schema/blueprint">
         <routeBuilder ref="cxfRoutes"/>
     </camelContext>
-    <reference id="CustomerDAO"
-               interface="ru.cinimex.learn.dao.ICustomerDao"/>
-
-    <bean id="client"
-          class="ru.cinimex.learn.Client"
-          init-method="init">
-        <property name="iCustomerDao" ref="CustomerDAO"/>
-    </bean>
 
     <bean id="cxfRoutes" class="ru.cinimex.learn.MyRoute">
+        <property name="iCustomerDao" ref="CustomerDao"/>
     </bean>
-
 </blueprint>
 
 

@@ -83,9 +83,9 @@
                             <wsdlOptions>
                                 <wsdlOption>
                                     <wsdl>${project.basedir}/src/main/resources/wsdl/customerWS.wsdl</wsdl>
-                                    <!--<extraargs>
+                                    <extraargs>
                                         <extraarg>-impl</extraarg>
-                                    </extraargs>-->
+                                    </extraargs>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
@@ -113,8 +113,6 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Export-Package>${project.groupId}.*</Export-Package>
-                        <Import-Package>ru.cinimex.learn.dao, *</Import-Package>
                     </instructions>
                 </configuration>
             </plugin>

@@ -17,9 +17,16 @@
         <test.version>4.12</test.version>
         <slf4j.version>1.7.21</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
+        <camel_blueprint.version>2.19.0</camel_blueprint.version>
     </properties>
 
     <dependencies>
+        <!--Blueprint-->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-blueprint</artifactId>
+            <version>${camel_blueprint.version}</version>
+        </dependency>
         <!--Logging-->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -86,7 +93,6 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
-                        <Export-Package>${groupId}.*,ru.cinimex.learn.dao.ICustomerDao</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
