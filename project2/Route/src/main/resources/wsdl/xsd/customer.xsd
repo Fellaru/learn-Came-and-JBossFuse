@@ -53,7 +53,7 @@
     <xs:element name="phoneList">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="phone" type="phone_type" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="phones" type="phone_type" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

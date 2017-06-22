@@ -5,6 +5,7 @@ import org.apache.camel.Processor;
 import ru.cinimex.learn.customerws.customer.CustomerType;
 import ru.cinimex.learn.customerws.customer.Customers;
 import ru.cinimex.learn.customerws.customer.PhoneList;
+import ru.cinimex.learn.dao.ICustomerDao;
 
 import java.util.Iterator;
 import java.util.List;
@@ -14,11 +15,13 @@ import java.util.List;
  * Created by efischenko on 20.06.2017.
  */
 public class GetCustByPhone implements Processor{
+    public ICustomerDao iCustomerDao;
     @Override
     public void process(Exchange exchange) throws Exception {
         Object[] args = exchange.getIn().getBody(Object[].class);
         exchange.getOut().setBody( new Customers());
     }
+
 }
 /*
 

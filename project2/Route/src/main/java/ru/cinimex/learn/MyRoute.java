@@ -21,7 +21,10 @@ public class MyRoute extends RouteBuilder {
     public void configure() throws Exception {
         from("cxf:bean:customer_ws").choice()
                 .when().simple("${in.header.operationName} == 'createCustomer'").process(new CreateCustomer())
-                .when().simple("${in.header.operationName} == 'getCustomerByPhone'").process(new GetCustByPhone()).endChoice();
+                .when().simple("${in.header.operationName} == 'getCustomerByPhone'").process(new GetCustByPhone())
+                .endChoice();
+                /*.to("direct-vm:phonebyfio");*/
 
+       /* from("direct-vm:phonebyfio").to("activemq:GETPHONE.INPUT");*/
     }
 }
