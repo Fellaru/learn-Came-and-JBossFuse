@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema targetNamespace="http://learn.cinimex.ru/CustomerWS/customer" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:cust="http://learn.cinimex.ru/CustomerWS/customer">
+           xmlns="http://learn.cinimex.ru/CustomerWS/customer">
 
     <xs:annotation>
         <xs:documentation xml:lang="en">
@@ -9,10 +9,10 @@
     </xs:annotation>
 
     <!--Customer-->
-    <xs:element name="customer" type="cust:customer_type"/>
+    <xs:element name="customer" type="customer_type"/>
     <xs:complexType name="customer_type">
         <xs:sequence>
-            <xs:element name="firstName">
+            <xs:element name="firstName" >
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:minLength value="1"/>
@@ -27,7 +27,7 @@
             </xs:simpleType>
             </xs:element>
             <xs:element name="middleName" type="xs:string" minOccurs="0"/>
-            <xs:element name="phone" type="xs:long" minOccurs="0">
+            <xs:element name="phone" type="phone_type" minOccurs="0">
             </xs:element>
             <xs:element name="email" type="xs:string" minOccurs="0"/>
             <xs:element name="customer_id" type="xs:int" minOccurs="0"/>
@@ -37,7 +37,7 @@
 
     <xs:simpleType name="phone_type" >
         <xs:restriction base="xs:long">
-            <xs:pattern value="[7-8]{1}[0-9]{11}" />
+            <xs:pattern value="[7-8]{1}[0-9]{10}" />
         </xs:restriction>
     </xs:simpleType>
 
@@ -46,14 +46,14 @@
     <xs:element name="Customers">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="customers" type="cust:customer_type" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="customers" type="customer_type" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
     <xs:element name="phoneList">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="phones" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="phone" type="phone_type" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
