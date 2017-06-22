@@ -41,6 +41,12 @@ public class GetCustByPhone implements Processor {
         customers.add(customerType);
     }
 
+    // TODO vakselrod Обычно классы называют:
+    /*
+    SomeClass - интерфейс
+    SomeClassImpl - имплементация
+    Впрочем, если тебе удобнее ISomeClass и SomeClass - страшного ничего нет :)
+     */
     public ICustomerDao getiCustomerDao() {
         return iCustomerDao;
     }
@@ -64,3 +70,23 @@ public class GetCustByPhone implements Processor {
 
         }*/
 //TODO Один не верный телефон и сразу весь ответ неверный! Возможно ли сделать через SoapFault ошибку только у одного customera
+/* TODO vakselrod
+  Постановка насчет телефона:
+  - если поле Email содержит некорректный Email - не записываем Email в БД.
+	- если поле Phone пустое - шина выполняет запрос к внешнему сервису getPhoneByFIO:
+		- если поле Phone получено - записываем всю запись в БД, статус создания клиента - Created.
+		- если поле Phone не получено (getPhoneByFIO не вернул ответ в течение таймаута или вернул отрицательный ответ)
+		    - запись в БД по этому конкретному клиенту не создается, статус создания - Error_CannotGetPhone.
+
+  Соответственно телефон может быть как пустым, так и быть любого формата.
+
+  Предлагаю убрать из схемы валидацию телефона:
+  <xs:simpleType name="phone_type" >
+        <xs:restriction base="xs:long">
+            <xs:pattern value="[7-8]{1}[0-9]{10}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+  SoapFault означает, что весь запрос не был обработан. Частично обработать запрос и бросить SoapFault нельзя.
+  В нашем случае мы прописываем статус по обработке в ответе по конкретному клиенту: Error_CannotGetPhone
+*/
