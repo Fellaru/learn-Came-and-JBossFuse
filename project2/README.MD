@@ -2,7 +2,8 @@
 ## Установка
 features:install hibernate
 install -s mvn:ru.cinimex.learn/database/1.0-SNAPSHOT
-install -s mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT
+ДОБАВЬ МОДЕЛь
+install -s mvn:ru.cinimex.learn/route/1.0-SNAPSHOT
 install -s mvn:ru.cinimex.learn/phonebookWS/1.0-SNAPSHOT
 
 
@@ -15,13 +16,13 @@ list
 
 ### Run 2 services
 uninstall phonebookWS
-uninstall Route
+uninstall route
 features:refreshUrl
 features:install all_Services
 list
 
 ### Run only route
-uninstall Route
+uninstall route
 features:refreshUrl
 features:install general
 list

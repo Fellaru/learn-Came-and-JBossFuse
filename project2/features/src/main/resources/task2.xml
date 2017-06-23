@@ -4,10 +4,13 @@
         <feature>hibernate</feature>
         <bundle>mvn:ru.cinimex.learn/database/1.0-SNAPSHOT</bundle>
         <bundle>mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:ru.cinimex.learn/model/1.0-SNAPSHOT</bundle>
         <bundle>mvn:ru.cinimex.learn/phonebookWS/1.0-SNAPSHOT</bundle>
+
     </feature>
 
     <feature name="all_Services">
+        <bundle>mvn:ru.cinimex.learn/model/1.0-SNAPSHOT</bundle>
         <bundle>mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT</bundle>
         <bundle>mvn:ru.cinimex.learn/phonebookWS/1.0-SNAPSHOT</bundle>
     </feature>

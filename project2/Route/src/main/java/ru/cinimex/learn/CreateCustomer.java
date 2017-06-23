@@ -6,7 +6,6 @@ import ru.cinimex.learn.customerws.customer.CustomerType;
 import ru.cinimex.learn.customerws.customer.Customers;
 
 
-
 import java.util.List;
 import java.util.Random;
 

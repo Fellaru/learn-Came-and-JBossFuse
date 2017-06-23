@@ -12,6 +12,11 @@
     <artifactId>model</artifactId>
     <packaging>bundle</packaging>
 
+    <properties>
+        <Export-Package>ru.cinimex.learn.model.wsdl.*,ru.cinimex.learn.customerws.*</Export-Package>
+    </properties>
+
+
     <build>
         <plugins>
             <!--wsdl2java-->
@@ -27,7 +32,7 @@
                             <sourceRoot>${project.basedir}/target/generated-sources/jaxws</sourceRoot>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${project.basedir}/src/main/resources/wsdl/customerWS.wsdl</wsdl>
+                                    <wsdl>${project.basedir}/src/main/resources/ru/cinimex/learn/model/wsdl/customerWS.wsdl</wsdl>
                                     <extraargs>
                                         <extraarg>-impl</extraarg>
                                     </extraargs>

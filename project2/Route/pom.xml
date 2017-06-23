@@ -14,6 +14,10 @@
     <artifactId>route</artifactId>
     <packaging>bundle</packaging>
 
+    <properties>
+        <Import-Package>ru.cinimex.learn.model.wsdl.*,ru.cinimex.learn.customerws.*,*</Import-Package>
+    </properties>
+
 
     <dependencies>
         <!-- CXF -->
@@ -28,9 +32,15 @@
             <artifactId>camel-core</artifactId>
             <version>${camel_cxf.version}</version>
         </dependency>
+        <!--My own dependency-->
         <dependency>
             <groupId>ru.cinimex.learn</groupId>
             <artifactId>database</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.cinimex.learn</groupId>
+            <artifactId>model</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
