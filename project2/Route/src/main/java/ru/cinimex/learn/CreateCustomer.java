@@ -4,7 +4,7 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import ru.cinimex.learn.customerws.customer.CustomerType;
 import ru.cinimex.learn.customerws.customer.Customers;
-import ru.cinimex.learn.dao.ICustomerDao;
+
 
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.Random;
  * Created by efischenko on 20.06.2017.
  */
 public class CreateCustomer implements Processor {
-    public static ICustomerDao iCustomerDao;
+
     private List<CustomerType> customers;
 
     @Override

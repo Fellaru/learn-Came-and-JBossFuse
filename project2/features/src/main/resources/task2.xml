@@ -7,12 +7,14 @@
         <bundle>mvn:ru.cinimex.learn/PhonebookWS/1.0-SNAPSHOT</bundle>
     </feature>
 
-    <feature name="general">
-        <bundle>mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT</bundle>
-    </feature>
-
     <feature name="all_Services">
         <bundle>mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT</bundle>
         <bundle>mvn:ru.cinimex.learn/PhonebookWS/1.0-SNAPSHOT</bundle>
     </feature>
+
+    <feature name="general">
+        <bundle>mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT</bundle>
+    </feature>
+
+
 </features>
