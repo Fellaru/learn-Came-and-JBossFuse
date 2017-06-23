@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7ed668c8-f339-4e72-9f8c-841f2ad6f78f" activeEnvironment="Default" name="PhonebookWS" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="0fe010da-7a1a-4509-850a-84cf2f210258" wsaVersion="NONE" name="Name_Binding" type="wsdl" bindingName="{http://learn.cinimex.ru/PhonebookWS}Name_Binding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8181/cxf/PhonebookWS?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8181/cxf/PhonebookWS?wsdl"><con:part><con:url>http://localhost:8181/cxf/PhonebookWS?wsdl</con:url><con:content><![CDATA[<definitions name="phonebookWSDL" targetNamespace="http://learn.cinimex.ru/PhonebookWS" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://learn.cinimex.ru/PhonebookWS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema targetNamespace="http://learn.cinimex.ru/PhonebookWS">
+      <xsd:element name="FIO">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="lastName" type="xsd:string"/>
+            <xsd:element name="firstName" type="xsd:string"/>
+            <xsd:element name="middleName" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="Response">
+    <part name="phone" type="xsd:string"></part>
+  </message>
+  <message name="Request">
+    <part element="tns:FIO" name="FIO"></part>
+  </message>
+  <portType name="IPhonebookWS">
+    <operation name="getPhoneByFIO">
+      <input message="tns:Request"></input>
+      <output message="tns:Response"></output>
+    </operation>
+  </portType>
+  <binding name="Name_Binding" type="tns:IPhonebookWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getPhoneByFIO">
+      <soap:operation soapAction="getPhoneByFIO"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="phonebook_ServiceClient">
+    <port binding="tns:Name_Binding" name="PhonebookWS">
+      <soap:address location="http://localhost:8181/cxf/PhonebookWS"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8181/cxf/PhonebookWS</con:endpoint></con:endpoints><con:operation id="829c9cb4-e014-464d-ad2a-74aede73ac99" isOneWay="false" action="getPhoneByFIO" name="getPhoneByFIO" bindingOperationName="getPhoneByFIO" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4b1e02bd-36b4-4012-aa19-09497b13eb61" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/cxf/PhonebookWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:phon="http://learn.cinimex.ru/PhonebookWS">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <phon:FIO>\r
+         <lastName>?</lastName>\r
+         <firstName>?</firstName>\r
+         <middleName>?</middleName>\r
+      </phon:FIO>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getPhoneByFIO"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="df6804fe-22ee-4b76-af97-0dfd0f0dbbb8" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="38cb0374-dae5-4f02-b628-7453c4de3cae" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="request" id="59f8bc12-211f-45ed-aa33-cb874eb19525" name="getPhoneByFIO - Request 1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>Name_Binding</con:interface><con:operation>getPhoneByFIO</con:operation><con:request name="getPhoneByFIO - Request 1" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="1799b2e9-6569-4192-bbd3-2138f0ab91cf"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8181/cxf/PhonebookWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:phon="http://learn.cinimex.ru/PhonebookWS">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <phon:FIO>\r
+         <lastName>?</lastName>\r
+         <firstName>?</firstName>\r
+         <middleName>?</middleName>\r
+      </phon:FIO>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d665c5eb-7619-4b24-b0b6-1ff137d1d916" name="SOAP Response"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getPhoneByFIO"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

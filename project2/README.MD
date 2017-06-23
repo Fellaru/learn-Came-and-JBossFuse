@@ -32,6 +32,8 @@ uninstall
 features:removeUrl mvn:ru.cinimex.learn/featuresRepo/1.0-SNAPSHOT/xml/features
 features:listurl
 
+# Test
+http://localhost:8181/cxf
 
 
 
