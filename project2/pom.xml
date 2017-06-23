@@ -14,10 +14,12 @@
         TODO  разобраться почему и как иначе-->
 
     <modules>
+        <module>model</module>
         <module>phonebookWS</module>
         <module>features</module>
         <module>database</module>
         <module>route</module>
+
     </modules>
 
 

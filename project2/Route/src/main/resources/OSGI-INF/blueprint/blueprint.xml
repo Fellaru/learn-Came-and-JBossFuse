@@ -12,7 +12,7 @@
 
     <cxf:cxfEndpoint id="customer_ws"
                      address="/CustomerWS"
-                     wsdlURL="wsdl/customerWS.wsdl"
+                     wsdlURL="classpath:/ru/cinimex/learning/model/wsdl/CustomerWS.wsdl"
                      serviceClass="ru.cinimex.learn.customerws.service.ICustomerWS"
                      xmlns:c="http://learn.cinimex.ru/CustomerWS/service">
         <!-- TODO vakselrod Когда перенесешь схемы в отдельный модуль, брать их оттуда можно так: -->

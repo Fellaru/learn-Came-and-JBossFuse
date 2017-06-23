@@ -33,7 +33,6 @@ public class GetCustByPhone implements Processor {
 
     public void getCustomer(Long phone) {
         iCustomerDao.getByPhone(phone);
-        //TODO Почему возвращает NullPointerException/Либо в Route инжектировать bean  этого класса либо static ICustomerDao
         //TODO Сделать конвертер который бы возвращал CustomerType
         CustomerType customerType = new CustomerType();
         customerType.setFirstName("Заглушка");
@@ -41,12 +40,6 @@ public class GetCustByPhone implements Processor {
         customers.add(customerType);
     }
 
-    // TODO vakselrod Обычно классы называют:
-    /*
-    SomeClass - интерфейс
-    SomeClassImpl - имплементация
-    Впрочем, если тебе удобнее ISomeClass и SomeClass - страшного ничего нет :)
-     */
     public ICustomerDao getiCustomerDao() {
         return iCustomerDao;
     }
