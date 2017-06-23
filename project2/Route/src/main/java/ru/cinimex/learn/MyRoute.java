@@ -9,6 +9,7 @@ import ru.cinimex.learn.dao.ICustomerDao;
 public class MyRoute extends RouteBuilder {
 
 
+
     @Override
     public void configure() throws Exception {
         from("cxf:bean:customer_ws").choice()

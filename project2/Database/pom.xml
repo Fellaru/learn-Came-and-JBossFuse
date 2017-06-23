@@ -13,6 +13,9 @@
 
     <artifactId>database</artifactId>
     <packaging>bundle</packaging>
+   <!-- <properties>
+        <Export-Package>ru.cinimex.learn.dao.ICustomerDao,${project.groupId}.*,ru.cinimex.learn.dao.*</Export-Package>
+    </properties>-->
 
 
     <dependencies>

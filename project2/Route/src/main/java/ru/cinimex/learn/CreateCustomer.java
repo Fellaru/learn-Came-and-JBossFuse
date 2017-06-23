@@ -4,6 +4,7 @@ import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import ru.cinimex.learn.customerws.customer.CustomerType;
 import ru.cinimex.learn.customerws.customer.Customers;
+import ru.cinimex.learn.customerws.service.CustomerWSImpl;
 
 
 import java.util.List;
@@ -17,8 +18,13 @@ public class CreateCustomer implements Processor {
 
     private List<CustomerType> customers;
 
+    private ru.cinimex.learn.customerws.service.ICustomerWS abc;
+
     @Override
     public void process(Exchange exchange) throws Exception {
+        abc = new CustomerWSImpl();
+        abc.createCustomer(new Customers());
+
         Object[] args = exchange.getIn().getBody(Object[].class);
         Customers dateForCustomer = (Customers) args[0];
         customers = dateForCustomer.getCustomers();

@@ -17,6 +17,7 @@ list
 ### Run 2 services
 uninstall phonebookWS
 uninstall route
+uninstall model
 features:refreshUrl
 features:install all_Services
 list
@@ -26,6 +27,22 @@ uninstall route
 features:refreshUrl
 features:install general
 list
+
+###DEBUG
+uninstall phonebookWS
+ uninstall route
+ uninstall model
+ features:refreshUrl
+ log:set DEBUG
+ features:install all_Services
+ list
+ log:display|grep Cus
+ 
+ log:set DEBUG
+ features:addurl mvn:ru.cinimex.learn/features/1.0-SNAPSHOT/xml/features
+ features:install first_run
+ list
+ log:display|grep Cus
 
 ### End
 features:uninstall

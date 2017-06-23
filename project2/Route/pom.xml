@@ -14,9 +14,9 @@
     <artifactId>route</artifactId>
     <packaging>bundle</packaging>
 
-    <properties>
-        <Import-Package>ru.cinimex.learn.model.wsdl.*,ru.cinimex.learn.customerws.*,*</Import-Package>
-    </properties>
+    <!--<properties>
+        <Import-Package>ru.cinimex.learn.model.wsdl.*,ru.cinimex.learn.customerws.*,ru.cinimex.learn.dao.ICustomerDao,*</Import-Package>
+    </properties>-->
 
 
     <dependencies>

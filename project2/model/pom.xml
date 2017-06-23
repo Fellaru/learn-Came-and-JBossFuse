@@ -13,7 +13,8 @@
     <packaging>bundle</packaging>
 
     <properties>
-        <Export-Package>ru.cinimex.learn.model.wsdl.*,ru.cinimex.learn.customerws.*</Export-Package>
+       <!-- <Export-Package>ru.cinimex.learn.model.wsdl.*,ru.cinimex.learn.customerws.*</Export-Package>-->
+        <Include-Resource>{maven-resources}, </Include-Resource>
     </properties>
 
 

@@ -35,8 +35,9 @@
         <junit.version>4.12</junit.version>
         <hibernate.version>4.2.15.Final</hibernate.version>
         <postgresql.version>9.3-1102-jdbc41</postgresql.version>
-        <Export-Package>${groupId}.*</Export-Package>
-        <Import-Package>*</Import-Package>
+        <!--<Export-Package>${groupId}.*</Export-Package>
+        <Import-Package>*</Import-Package>-->
+        <Include-Resource>{maven-resources}</Include-Resource>
     </properties>
 
     <dependencies>
@@ -84,8 +85,9 @@
             <extensions>true</extensions>
             <configuration>
                 <instructions>
-                    <Export-Package>${Export-Package}</Export-Package>
-                    <Import-Package>${Import-Package}</Import-Package>
+                   <!-- <Export-Package>${Export-Package}</Export-Package>
+                    <Import-Package>${Import-Package}</Import-Package>-->
+                    <Include-Resource>${Include-Resource}</Include-Resource>
                 </instructions>
             </configuration>
         </plugin>
