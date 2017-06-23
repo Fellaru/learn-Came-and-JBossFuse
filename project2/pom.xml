@@ -12,7 +12,6 @@
 
 
     <modules>
-        <module>CustomerWS</module>
         <module>PhonebookWS</module>
         <module>features</module>
         <module>Database</module>
