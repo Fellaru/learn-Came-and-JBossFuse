@@ -1,13 +1,12 @@
-#BUNDLE
+# BUNDLE
 ## Установка
->>>>>>> beadd717eaeed47a3c017065567eb12d3e90f23d
 features:install hibernate
 install -s mvn:ru.cinimex.learn/Database/1.0-SNAPSHOT
 install -s mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT
 install -s mvn:ru.cinimex.learn/PhonebookWS/1.0-SNAPSHOT
 
 
-#FEATURE 
+# FEATURE 
 ### Fisrt run
 please delete data at \jboss-fuse-6.3.0.redhat-254\ or profile 
 features:addurl mvn:ru.cinimex.learn/featuresRepo/1.0-SNAPSHOT/xml/features
