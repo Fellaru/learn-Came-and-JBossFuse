@@ -12,10 +12,10 @@
 
 
     <modules>
-        <module>PhonebookWS</module>
+        <module>phonebookWS</module>
         <module>features</module>
-        <module>Database</module>
-        <module>Route</module>
+        <module>database</module>
+        <module>route</module>
     </modules>
 
 

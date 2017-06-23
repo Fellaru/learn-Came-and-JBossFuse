@@ -18,7 +18,7 @@
     <!-- A normal CXF endpoint -->
     <jaxws:endpoint id="sampleService" implementor="#PhonebookWS"
                     endpointName="s:PhonebookWS" serviceName="s:phonebook_ServiceClient" address="/PhonebookWS"
-                    wsdlLocation="file:/C:/Users/efischenko/Desktop/efischenko-learning/project2/PhonebookWS/src/main/resources/wsdl/phonebook.wsdl"
+                    wsdlLocation="wsdl/phonebook.wsdl"
                     xmlns:s="http://learn.cinimex.ru/PhonebookWS">
         <jaxws:properties>
             <entry key="schema-validation-enabled" value="${schema-validation-enabled}"/>
