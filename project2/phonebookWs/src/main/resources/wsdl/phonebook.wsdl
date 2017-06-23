@@ -39,7 +39,7 @@
 
     <binding name="Name_Binding" type="tns:IPhonebookWS">
         <soap:binding style="document"
-                      transport="http://www.w3.org/2010/soapjms/"/>
+                      transport="http://schemas.xmlsoap.org/soap/http"/>
         <operation name="getPhoneByFIO">
             <soap:operation soapAction="getPhoneByFIO"/>
             <input>
@@ -59,6 +59,7 @@
         </port>
     </service>
 </definitions>
+<!--  transport="http://www.w3.org/2010/soapjms/"/>-->
 <!--"jms:jndi:GETPHONEBYFIO.INPUT?deliveryMode=NON_PERSISTENT&receiveTimout=5000&replyToName="jms:jndi:GETPHONEBYFIO.OUTPUT""-->
 <!--
                location=

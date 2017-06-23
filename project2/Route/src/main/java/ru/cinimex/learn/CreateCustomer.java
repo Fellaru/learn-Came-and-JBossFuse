@@ -15,7 +15,7 @@ import java.util.Random;
  * Created by efischenko on 20.06.2017.
  */
 public class CreateCustomer implements Processor {
-    public ICustomerDao iCustomerDao;
+    public static ICustomerDao iCustomerDao;
     private List<CustomerType> customers;
 
     @Override

@@ -14,7 +14,7 @@ import java.util.List;
  * Created by efischenko on 20.06.2017.
  */
 public class GetCustByPhone implements Processor {
-    public ICustomerDao iCustomerDao;
+    public static ICustomerDao iCustomerDao;
     private List<CustomerType> customers;
 
     @Override
@@ -32,8 +32,8 @@ public class GetCustByPhone implements Processor {
 
 
     public void getCustomer(Long phone) {
-        /*iCustomerDao.getByPhone(phone);*/
-        //TODO Почему возвращает NullPointerException
+        iCustomerDao.getByPhone(phone);
+        //TODO Почему возвращает NullPointerException/Либо в Route инжектировать bean  этого класса либо static ICustomerDao
         //TODO Сделать конвертер который бы возвращал CustomerType
         CustomerType customerType = new CustomerType();
         customerType.setFirstName("Заглушка");

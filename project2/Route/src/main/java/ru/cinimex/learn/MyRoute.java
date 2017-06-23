@@ -12,7 +12,9 @@ public class MyRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("cxf:bean:customer_ws").choice()
-                .when().simple("${in.header.operationName} == 'createCustomer'").process(new CreateCustomer())
+                .when().simple("${in.header.operationName} == 'createCustomer'")
+                                /* .choice()
+                                  .when()*/.process(new CreateCustomer())
                 .when().simple("${in.header.operationName} == 'getCustomerByPhone'").process(new GetCustByPhone())
                 .endChoice();
                 /*.to("direct-vm:phonebyfio");*/

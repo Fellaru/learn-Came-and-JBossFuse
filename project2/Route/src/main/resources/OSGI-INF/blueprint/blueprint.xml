@@ -30,6 +30,9 @@
     <bean id="GetCustByPhone" class="ru.cinimex.learn.GetCustByPhone">
         <property name="iCustomerDao" ref="CustomerDao"/>
     </bean>
+    <bean id="CreateCustomer" class="ru.cinimex.learn.CreateCustomer">
+        <property name="iCustomerDao" ref="CustomerDao"/>
+    </bean>
 </blueprint>
 
 

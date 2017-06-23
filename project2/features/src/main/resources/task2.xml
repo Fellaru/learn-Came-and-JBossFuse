@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <features name="task2">
-    <feature name="general">
-        <bundle>mvn:org.hibernate//1.0-SNAPSHOT</bundle>
+    <feature name="first_run">
+        <feature>hibernate</feature>
+        <bundle>mvn:ru.cinimex.learn/Database/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT</bundle>
         <bundle>mvn:ru.cinimex.learn/PhonebookWS/1.0-SNAPSHOT</bundle>
     </feature>
 
-    <feature name="All_Services">
-        <bundle>mvn:ru.cinimex.learn/CustomerWS/1.0-SNAPSHOT</bundle>
+    <feature name="general">
+        <bundle>mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT</bundle>
+    </feature>
+
+    <feature name="all_Services">
+        <bundle>mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT</bundle>
         <bundle>mvn:ru.cinimex.learn/PhonebookWS/1.0-SNAPSHOT</bundle>
     </feature>
 </features>
