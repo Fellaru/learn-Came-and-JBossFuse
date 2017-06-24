@@ -4,7 +4,8 @@ import junit.framework.TestCase;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import ru.cinimex.learn.entity.Customer;
+import ru.cinimex.learn.model.entity.Customer;
+
 
 import java.util.Random;
 

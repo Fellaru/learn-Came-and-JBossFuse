@@ -3,7 +3,8 @@ package ru.cinimex.learn.dao;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ru.cinimex.learn.entity.Customer;
+import ru.cinimex.learn.model.entity.Customer;
+
 
 import java.util.ArrayList;
 import java.util.List;

@@ -32,7 +32,8 @@
         <property name="hibernate.current_session_context_class">thread</property>
 
         <!--mapping-->
-        <mapping class="ru.cinimex.learn.entity.Customer"/>
+        <mapping class="ru.cinimex.learn.model.entity.Customer"/>
+        <!--TODO Здесь placeholder-->
 
     </session-factory>
 </hibernate-configuration>

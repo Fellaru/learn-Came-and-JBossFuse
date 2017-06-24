@@ -3,7 +3,8 @@ package ru.cinimex.learn.dao;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-import ru.cinimex.learn.entity.Customer;
+import ru.cinimex.learn.model.entity.Customer;
+
 
 import java.util.Random;
 

@@ -1,5 +1,4 @@
-package ru.cinimex.learn.entity;
-
+package ru.cinimex.learn.model.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

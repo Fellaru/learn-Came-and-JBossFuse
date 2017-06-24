@@ -14,8 +14,16 @@
 
     <properties>
        <!-- <Export-Package>ru.cinimex.learn.model.wsdl.*,ru.cinimex.learn.customerws.*</Export-Package>-->
-        <Include-Resource>{maven-resources}, </Include-Resource>
+        <Include-Resource>{maven-resources} </Include-Resource>
     </properties>
+
+    <dependencies><!--Hibernate-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+    </dependencies>
 
 
     <build>

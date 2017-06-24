@@ -1,7 +1,9 @@
 package ru.cinimex.learn.dao;
 
 
-import ru.cinimex.learn.entity.Customer;
+
+
+import ru.cinimex.learn.model.entity.Customer;
 
 import java.util.List;
 
