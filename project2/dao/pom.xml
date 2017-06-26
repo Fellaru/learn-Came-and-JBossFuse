@@ -11,10 +11,10 @@
     </parent>
 
 
-    <artifactId>database</artifactId>
+    <artifactId>dao</artifactId>
     <packaging>bundle</packaging>
-   <!-- <properties>
-        <Export-Package>ru.cinimex.learn.dao.ICustomerDao,${project.groupId}.*,ru.cinimex.learn.dao.*</Export-Package>
+  <!--  <properties>
+        <Export-Package>ru.cinimex.learn.dao.ICustomerDao,${project.groupId}.*,ru.cinimex.learn.dao.*,ru.cinimex.learn.model.entity.Customer</Export-Package>
     </properties>-->
 
 

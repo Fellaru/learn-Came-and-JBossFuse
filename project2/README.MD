@@ -1,5 +1,4 @@
 # BUNDLE
-## Установка
 features:install hibernate
 install -s mvn:ru.cinimex.learn/database/1.0-SNAPSHOT
 ДОБАВЬ МОДЕЛь

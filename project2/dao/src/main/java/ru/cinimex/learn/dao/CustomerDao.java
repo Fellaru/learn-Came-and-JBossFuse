@@ -15,6 +15,10 @@ import java.util.List;
 public class CustomerDao implements ICustomerDao{
     private static Session session ;
     private static final Logger log = LoggerFactory.getLogger(CustomerDao.class);
+   /* private static Database database = new Database();*/
+   //TODO Если раскоментировать упадет
+
+
 
 
     public List<Customer> getAll() {

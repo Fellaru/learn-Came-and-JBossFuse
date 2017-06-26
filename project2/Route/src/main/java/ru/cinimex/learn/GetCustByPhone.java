@@ -2,10 +2,12 @@ package ru.cinimex.learn;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
+
 import ru.cinimex.learn.customerws.customer.CustomerType;
 import ru.cinimex.learn.customerws.customer.Customers;
 import ru.cinimex.learn.customerws.customer.PhoneList;
 import ru.cinimex.learn.dao.ICustomerDao;
+
 
 import java.util.List;
 
@@ -22,6 +24,14 @@ public class GetCustByPhone implements Processor {
         Customers dateForCustomer = new Customers();
         customers = dateForCustomer.getCustomers();
 
+
+        /*Experiment*//*
+        CustomerType cust = new CustomerType();
+        TypeConverter tc = exchange.getContext().getTypeConverter();
+        Customer convertCust = tc.convertTo(Customer.class ,cust );
+        *//*Experiment*//*
+        System.out.println(convertCust.toString());*/
+
         Object[] args = exchange.getIn().getBody(Object[].class);
         List<Long> phones = ((PhoneList) args[0]).getPhones();
         for (Long p : phones) {
@@ -32,8 +42,9 @@ public class GetCustByPhone implements Processor {
 
 
     public void getCustomer(Long phone) {
-        iCustomerDao.getByPhone(phone);
-        //TODO Сделать конвертер который бы возвращал CustomerType
+
+      /*  iCustomerDao.getByPhone(phone);
+        //TODO Сделать конвертер который бы возвращал CustomerType*/
         CustomerType customerType = new CustomerType();
         customerType.setFirstName("Заглушка");
         customerType.setLastName("Заглушка");

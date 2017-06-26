@@ -16,9 +16,7 @@
                      serviceClass="ru.cinimex.learn.customerws.service.ICustomerWS"
                      xmlns:c="http://learn.cinimex.ru/CustomerWS/service">
         <!--TODO Здесь placeholder v serviceClass -->
-        <!-- TODO vakselrod Когда перенесешь схемы в отдельный модуль, брать их оттуда можно так: -->
-        <!-- wsdlURL="classpath:/ru/cinimex/learning/schema/customerWS/CustomerWS.wsdl"
-         classpath:ru/cinimex/learn/model/wsdl/ -->
+
 
         <cxf:properties>
                         <entry key="schema-validation-enabled" value="true"/>
@@ -36,9 +34,9 @@
         <property name="iCustomerDao" ref="CustomerDao"/>
     </bean>
 
-    <!--<bean id="CreateCustomer" class="ru.cinimex.learn.CreateCustomer">
+    <bean id="CreateCustomer" class="ru.cinimex.learn.CreateCustomer">
         <property name="iCustomerDao" ref="CustomerDao"/>
-    </bean>-->
+    </bean>
 </blueprint>
 
 

@@ -17,8 +17,10 @@
         <module>model</module>
         <module>phonebookWS</module>
         <module>features</module>
-        <module>database</module>
+        <module>dao</module>
         <module>route</module>
+       <!-- <module>datasource</module>-->
+
 
     </modules>
 
