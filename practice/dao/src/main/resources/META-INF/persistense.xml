@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+	http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <!--TODO версия 2_0 не уверена в версии-->
+
+<persistence-unit name="MyPersistenceName" transaction-type="JTA">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+    <jta-data-source>osgi:service/jdbc/postgresds</jta-data-source>
+
+    <!--TODO можно включить и <non-jta-data-source></non-jta-data-source> для DatabaseUnmanaged случая
+
+
+    <class>my.experiment.Customer</class>
+
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+    <properties>
+       <!-- <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>-->
+        <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true" />
+    </properties>
+</persistence-unit>
+</persistence>
+
+
+
+
+

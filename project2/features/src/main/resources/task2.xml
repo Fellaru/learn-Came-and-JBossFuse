@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <features name="task2">
     <feature name="first_run">
+        <feature>camel-jpa</feature>
+        <feature>camel-jaxb</feature>
+        <feature>jndi</feature>
+        <feature>swagger</feature>
+        <feature>cxf-jaxws</feature>
         <feature>hibernate</feature>
         <bundle>mvn:ru.cinimex.learn/dao/1.0-SNAPSHOT</bundle>
         <bundle>mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT</bundle>

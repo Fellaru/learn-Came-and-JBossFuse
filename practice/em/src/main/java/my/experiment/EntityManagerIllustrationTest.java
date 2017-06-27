@@ -1,20 +1,20 @@
-package ru.cinimex.learn.dao;
+package my.experiment;
 
-import junit.framework.TestCase;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import ru.cinimex.learn.model.entity.Customer;
-
-
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.Date;
-import java.util.Random;
 
+import junit.framework.TestCase;
 
-public class AppTest extends TestCase {
+/**
+ * Illustrates basic use of Hibernate as a JPA provider.
+ *
+ * @author Steve Ebersole
+ */
+public class EntityManagerIllustrationTest extends TestCase {
     private String firstName = "Ella";
     private String lastName = "Fischenko";
     private Long phone =  new Random().nextLong();
@@ -32,12 +32,22 @@ public class AppTest extends TestCase {
         entityManagerFactory.close();
     }
 
-
-    public void testApp() {
+    public void testBasicUsage() {
+        // create a couple of events...
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         entityManager.getTransaction().begin();
         entityManager.persist( new Customer().setFirstName(firstName).setLastName(lastName).setPhone(phone) );
         entityManager.getTransaction().commit();
         entityManager.close();
+
+        /*// now lets pull events from the database and list them
+        entityManager = entityManagerFactory.createEntityManager();
+        entityManager.getTransaction().begin();
+        List<Customer> result = entityManager.createQuery( "from Cu", Customer.class ).getResultList();
+        for ( Customer event : result ) {
+            System.out.println( "Event (" + event.getDate() + ") : " + event.getTitle() );
+        }
+        entityManager.getTransaction().commit();
+        entityManager.close();*/
     }
 }
