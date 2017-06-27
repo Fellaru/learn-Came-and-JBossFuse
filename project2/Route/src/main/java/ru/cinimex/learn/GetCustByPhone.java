@@ -43,7 +43,7 @@ public class GetCustByPhone implements Processor {
 
     public void getCustomer(Long phone) {
 
-      /*  iCustomerDao.getByPhone(phone);
+        /*iCustomerDao.getByPhone(phone);*/
         //TODO Сделать конвертер который бы возвращал CustomerType*/
         CustomerType customerType = new CustomerType();
         customerType.setFirstName("Заглушка");
