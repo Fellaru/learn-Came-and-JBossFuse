@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import ru.cinimex.learn.customerws.customer.CustomerType;
 import ru.cinimex.learn.customerws.customer.Customers;
 import ru.cinimex.learn.customerws.service.CustomerWSImpl;
-import ru.cinimex.learn.dao.ICustomerDao;
+
 
 
 import java.util.List;
@@ -19,7 +19,7 @@ import java.util.Random;
  * Created by efischenko on 20.06.2017.
  */
 public class CreateCustomer implements Processor {
-    public static ICustomerDao iCustomerDao;//TODO 11 Усли начать работать с iCustomerDao упадет(из за все той же причины)
+   /* public static ICustomerDao iCustomerDao;//TODO 11 Усли начать работать с iCustomerDao упадет(из за все той же причины)*/
 
     private List<CustomerType> customers;
 
@@ -51,24 +51,24 @@ public class CreateCustomer implements Processor {
         logger.info("End of CreateCustomer process");
         exchange.getOut().setBody(dateForCustomer);
         logger.info("iCustomerDao");
-        logger.info(Boolean.toString(iCustomerDao == null));
-        iCustomerDao.getAll();
+      /*  logger.info(Boolean.toString(iCustomerDao == null));*/
+      /*  iCustomerDao.getAll();*/
     }
 
-    public ICustomerDao getiCustomerDao() {
+  /*  public ICustomerDao getiCustomerDao() {
         logger.info("Calling method getiCustomerDao");
         logger.info("iCustomerDao == null ->" + Boolean.toString(iCustomerDao == null));
         return iCustomerDao;
-    }
-
-    public void setiCustomerDao(ICustomerDao iCustomerDao) {
+    }*/
+/*
+  *//*  public void setiCustomerDao(ICustomerDao iCustomerDao) {*//*
 
         logger.info("Calling method setiCustomerDao");
         logger.info("iCustomerDao == null ->" + Boolean.toString(iCustomerDao == null));
         this.iCustomerDao = iCustomerDao;
         logger.info("iCustomerDao == null ->" + Boolean.toString(iCustomerDao == null));
         logger.info("End method setiCustomerDao");
-    }
+    }*/
 
     private Long getPhoneByCustomer(CustomerType customer) {
         logger.info("Work with PhonebookWS ");

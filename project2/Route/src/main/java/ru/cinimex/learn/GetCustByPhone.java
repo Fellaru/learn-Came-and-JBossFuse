@@ -6,7 +6,7 @@ import org.apache.camel.Processor;
 import ru.cinimex.learn.customerws.customer.CustomerType;
 import ru.cinimex.learn.customerws.customer.Customers;
 import ru.cinimex.learn.customerws.customer.PhoneList;
-import ru.cinimex.learn.dao.ICustomerDao;
+
 
 
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
  * Created by efischenko on 20.06.2017.
  */
 public class GetCustByPhone implements Processor {
-    public static ICustomerDao iCustomerDao;
+   /* public static ICustomerDao iCustomerDao;*/
     private List<CustomerType> customers;
 
     @Override
@@ -51,14 +51,14 @@ public class GetCustByPhone implements Processor {
         customers.add(customerType);
     }
 
-    public ICustomerDao getiCustomerDao() {
+ /*   public ICustomerDao getiCustomerDao() {
         return iCustomerDao;
     }
 
     public void setiCustomerDao(ICustomerDao iCustomerDao) {
         this.iCustomerDao = iCustomerDao;
     }
-
+*/
 
 }
 

@@ -2,9 +2,8 @@ package ru.cinimex.learn;
 
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import ru.cinimex.learn.dao.ICustomerDao;
+
+
 
 /**
  * Created by efischenko on 20.06.2017.

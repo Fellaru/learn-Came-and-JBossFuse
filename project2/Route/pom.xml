@@ -33,11 +33,11 @@
             <version>${camel_cxf.version}</version>
         </dependency>
         <!--My own dependency-->
-        <dependency>
+    <!--    <dependency>
             <groupId>ru.cinimex.learn</groupId>
             <artifactId>dao</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>ru.cinimex.learn</groupId>
             <artifactId>model</artifactId>
