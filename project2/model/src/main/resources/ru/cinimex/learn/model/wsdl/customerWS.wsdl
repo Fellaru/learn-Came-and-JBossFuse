@@ -75,7 +75,7 @@
 
 
     <message name="getRequest">
-        <part name="phoneList" element="cust:phoneList"></part>
+        <part name="phoneList" element="cust:PhoneList"></part>
     </message>
 
     <message name="getResponse">
