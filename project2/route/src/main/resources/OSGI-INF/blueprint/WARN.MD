@@ -1,4 +1,0 @@
-It is possible to use # notation to reference a serviceClass object instance from the registry. E.g. serviceClass=#beanName. The serviceClass for a CXF producer (that is, the to endpoint) should be a Java interface.
-Since 2.8, it is possible to omit both wsdlURL and serviceClass options for PAYLOAD and MESSAGE mode. When they are omitted, arbitrary XML elements can be put in CxfPayload's body in PAYLOAD mode to facilitate CXF Dispatch Mode. 
-
-Please be advised that the referenced object cannot be a Proxy (Spring AOP Proxy is OK) as it relies on Object.getClass().getName() method for non Spring AOP Proxy. 
