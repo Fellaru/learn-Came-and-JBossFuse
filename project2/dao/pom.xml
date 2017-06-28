@@ -20,6 +20,21 @@
         <maven-bundle-plugin-version>2.5.4</maven-bundle-plugin-version>
         <maven-surefire-plugin-version>2.12.2-redhat-1</maven-surefire-plugin-version>
         <build-helper-maven-plugin-version>1.5-redhat-1</build-helper-maven-plugin-version>
+        <persistence-file>META-INF/persistence.xml</persistence-file>
+        <osgi-import-pkg>
+            javax.persistence;version="[2.0,2.1)",
+            javax.persistence.criteria;version="[2.0,2.1)",
+            javax.sql,
+            org.hibernate;version="[4.2,4.3)",
+            javassist.util.proxy,
+            org.hibernate.ejb;version="[4.2,5)",
+            org.hibernate.proxy;version="[4.2,4.3)",
+            *
+
+        </osgi-import-pkg>
+        <osgi-export-pkg>
+            ${project.groupId}.*
+        </osgi-export-pkg>
     </properties>
 
     <dependencyManagement>
@@ -59,18 +74,62 @@
             <artifactId>model</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.2.22.Final-redhat-1</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <!--
+
+               &lt;!&ndash;Hibernate&ndash;&gt;
+                    <dependency>
+                        <groupId>org.hibernate</groupId>
+                        <artifactId>hibernate-core</artifactId>
+                        <version>${hibernate.version}</version>
+                    </dependency>
+                    &lt;!&ndash;Camel&ndash;&gt;
+                    <dependency>
+                        <groupId>org.apache.camel</groupId>
+                        <artifactId>camel-core</artifactId>
+                        <version>${camel_cxf.version}</version>
+                    </dependency>
+                &lt;!&ndash;Blueprint&ndash;&gt;
+                <dependency>
+                    <groupId>org.apache.camel</groupId>
+                    <artifactId>camel-blueprint</artifactId>
+                    <version>${camel_blueprint.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>io.fabric8</groupId>
+                    <artifactId>tooling-fabric-all</artifactId>
+                    <version>1.2.0.redhat-630262</version>
+                </dependency>
+        -->
+
+
     </dependencies>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.felix</groupId>
-                    <artifactId>maven-bundle-plugin</artifactId>
-                    <version>${maven-bundle-plugin-version}</version>
-                    <extensions>true</extensions>
-                </plugin>
-                <plugin>
+    <pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Meta-Persistence>${persistence-file}</Meta-Persistence>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Import-Package>${osgi-import-pkg}</Import-Package>
+                        <Export-Package>${osgi-export-pkg}</Export-Package>
+                        <Include-Resource>{maven-resources}</Include-Resource>
+                    </instructions>
+                </configuration>
+            </plugin>
+        <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin-version}</version>
@@ -156,66 +215,6 @@
 
 
 
-    <!--<dependencies>
 
-    <dependency>
-        <groupId>org.osgi</groupId>
-        <artifactId>org.osgi.core</artifactId>
-        <version>4.3.1</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.karaf.shell</groupId>
-        <artifactId>org.apache.karaf.shell.console</artifactId>
-        <version>4.0.5</version>
-    </dependency>
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>${slf4j-version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.hibernate.javax.persistence</groupId>
-        <artifactId>hibernate-jpa-2.1-api</artifactId>
-        <version>1.0.0.Final</version>
-    </dependency>
-
-
-    <dependency>
-        <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-entitymanager</artifactId>
-        <version>4.3.5.Final</version>
-        <scope>test</scope>
-    </dependency>
-
-    <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>4.7</version>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>${log4j-version}</version>
-        <scope>test</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>${slf4j-version}</version>
-        <scope>test</scope>
-    </dependency>
-
-    <dependency>
-        <groupId>org.postgresql</groupId>
-        <artifactId>postgresql</artifactId>
-        <version>9.3-1102-jdbc41</version>
-    </dependency>
-    <dependency>
-        <groupId>ru.cinimex.learn</groupId>
-        <artifactId>model</artifactId>
-        <version>1.0-SNAPSHOT</version>
-    </dependency>
-</dependencies>-->
 
 </project>

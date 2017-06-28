@@ -7,11 +7,12 @@
         <feature>swagger</feature>
         <feature>cxf-jaxws</feature>
         <feature>hibernate</feature>
+        <bundle>mvn:org.ancoron.postgresql/org.postgresql/9.1.901.jdbc4.1-rc9</bundle>
+        <bundle>mvn:ru.cinimex.learn/model/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:ru.cinimex.learn/datasource/1.0-SNAPSHOT</bundle>
         <bundle>mvn:ru.cinimex.learn/dao/1.0-SNAPSHOT</bundle>
         <bundle>mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT</bundle>
-        <bundle>mvn:ru.cinimex.learn/model/1.0-SNAPSHOT</bundle>
         <bundle>mvn:ru.cinimex.learn/phonebookWS/1.0-SNAPSHOT</bundle>
-
     </feature>
 
     <feature name="all_Services">

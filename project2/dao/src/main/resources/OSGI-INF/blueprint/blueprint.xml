@@ -13,7 +13,7 @@
 
     <bean id="CustomerDaoService" class="ru.cinimex.learn.dao.CustomerDaoImpl">
         <jpa:context unitname="MyPersistenceName" property="entityManager"/>
-        <tx:transaction method="*" value="RequiresNew"/>
+        <tx:transaction method="*" value="Required"/>
         <!--TODO исправить как у Вадима
          Вадим скинул <tx:transaction method="*" value="RequiresNew"/>-->
     </bean>

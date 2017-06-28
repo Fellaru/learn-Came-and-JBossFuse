@@ -4,10 +4,10 @@
 
     <bean id="dataSource" class="org.postgresql.ds.PGPoolingDataSource" destroy-method="close">
         <!--<property name="serverName" value="server:port/dbname"/>-->
-        <!--TODO настроить с помощью placeholder
-        <property name="serverName" value="localhost">
-        <property name="portNumber" value="0">
-        <property name="databaseName" value="postgres">-->
+        <!--TODO настроить с помощью placeholder-->
+        <property name="serverName" value="localhost"/>
+        <property name="portNumber" value="0"/>
+        <property name="databaseName" value=""/>
         <property name="user" value="postgres"/>
         <property name="password" value="1"/>
         <property name="dataSourceName" value="myConnectionPool"/>

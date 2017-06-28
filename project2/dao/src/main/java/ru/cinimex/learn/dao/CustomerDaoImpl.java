@@ -30,7 +30,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public List<Customer> getAll() {
-        return em.createQuery("select p from Customer p", Customer.class).getResultList();
+        return em.createQuery("select p from customers p", Customer.class).getResultList();
         /*TODO select p from from customer_schema.customers*/
     }
 }

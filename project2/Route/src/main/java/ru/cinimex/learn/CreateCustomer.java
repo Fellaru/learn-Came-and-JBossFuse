@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import ru.cinimex.learn.customerws.customer.CustomerType;
 import ru.cinimex.learn.customerws.customer.Customers;
 import ru.cinimex.learn.customerws.service.CustomerWSImpl;
-
+import ru.cinimex.learn.dao.CustomerDao;
 
 
 import java.util.List;
@@ -19,7 +19,8 @@ import java.util.Random;
  * Created by efischenko on 20.06.2017.
  */
 public class CreateCustomer implements Processor {
-   /* public static ICustomerDao iCustomerDao;//TODO 11 Усли начать работать с iCustomerDao упадет(из за все той же причины)*/
+    public static CustomerDao customerDao;
+
 
     private List<CustomerType> customers;
 
@@ -40,35 +41,39 @@ public class CreateCustomer implements Processor {
         customers = dateForCustomer.getCustomers();
         logger.info("Start work with List<CustomerType> customers");
         for (CustomerType c : customers) {
+            logger.info("inside");
+            logger.info("inside");
+            logger.info(Boolean.toString(c == null));
             logger.info(c.toString());
             //TODO сделать проверку на id а то не вставиться и вернуть SoapFault(или статус eror)
+            logger.info("inside");
             if(!isEmailValid(c.getEmail())) c.setEmail(null);
-            /* c = Converter(iCustomerDao.insert(c));*/
+            logger.info("1");
             c.setCustomerStatus("ImitationCreate");
+            logger.info("2");
             logger.info(c.getFirstName() + c.getLastName());
+            logger.info("3");
     }
         logger.info(Boolean.toString(dateForCustomer == null));
         logger.info("End of CreateCustomer process");
         exchange.getOut().setBody(dateForCustomer);
         logger.info("iCustomerDao");
-      /*  logger.info(Boolean.toString(iCustomerDao == null));*/
-      /*  iCustomerDao.getAll();*/
+        logger.info(Boolean.toString(customerDao == null));
+        customerDao.getAll();
     }
 
-  /*  public ICustomerDao getiCustomerDao() {
-        logger.info("Calling method getiCustomerDao");
-        logger.info("iCustomerDao == null ->" + Boolean.toString(iCustomerDao == null));
-        return iCustomerDao;
-    }*/
-/*
-  *//*  public void setiCustomerDao(ICustomerDao iCustomerDao) {*//*
+    public CustomerDao getCustomerDao() {
+        return customerDao;
+    }
 
-        logger.info("Calling method setiCustomerDao");
-        logger.info("iCustomerDao == null ->" + Boolean.toString(iCustomerDao == null));
-        this.iCustomerDao = iCustomerDao;
-        logger.info("iCustomerDao == null ->" + Boolean.toString(iCustomerDao == null));
+    public void setCustomerDao(CustomerDao customerDao) {
+        logger.info("Calling method setCustomerDao");
+        logger.info("CustomerDao == null ->" + Boolean.toString(customerDao == null));
+        this.customerDao = customerDao;
+        logger.info("iCustomerDao == null ->" + Boolean.toString(customerDao == null));
         logger.info("End method setiCustomerDao");
-    }*/
+
+    }
 
     private Long getPhoneByCustomer(CustomerType customer) {
         logger.info("Work with PhonebookWS ");
@@ -77,10 +82,10 @@ public class CreateCustomer implements Processor {
     }
 
     public boolean isEmailValid(String email) {
-        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        /*String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
-        java.util.regex.Matcher m = p.matcher(email);
-        return m.matches();
+        java.util.regex.Matcher m = p.matcher(email);m.matches();*/
+        return true;
         //TODO СДелать через функцию а не руками( функцию которая пойдет на fuse)
     }
 }

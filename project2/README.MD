@@ -42,6 +42,18 @@ uninstall phonebookWS
  features:install first_run
  list
  log:display|grep Cus
+ 
+ ### DEBUG KARAF 
+ 
+ win+R cmd
+ cd C:\jboss-fuse-6.3.0.redhat-254\bin
+ karaf debug
+ 
+  В Intellij Idea 
+  edit konfiguration( Там где мелньекое окошко около запуска и дебага) -> remoute -> + -> Исправь name ( например Karaf)
+  все ставим точки запускаем)
+ 
+ 
 
 ### End
 features:uninstall
