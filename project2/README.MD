@@ -1,11 +1,3 @@
-# BUNDLE
-features:install hibernate
-install -s mvn:ru.cinimex.learn/database/1.0-SNAPSHOT
-ДОБАВЬ МОДЕЛь
-install -s mvn:ru.cinimex.learn/route/1.0-SNAPSHOT
-install -s mvn:ru.cinimex.learn/phonebookWS/1.0-SNAPSHOT
-
-
 # FEATURE 
 ### Fisrt run
 please delete data at \jboss-fuse-6.3.0.redhat-254\ or profile 
@@ -29,29 +21,29 @@ list
 
 ###DEBUG
 uninstall phonebookWS
- uninstall route
- uninstall model
- features:refreshUrl
- log:set DEBUG
- features:install all_Services
- list
- log:display|grep Cus
+uninstall route
+uninstall model
+features:refreshUrl
+log:set DEBUG
+features:install all_Services
+list
+log:display|grep Cus
+
+log:set DEBUG
+features:addurl mvn:ru.cinimex.learn/features/1.0-SNAPSHOT/xml/features
+features:install first_run
+list
+log:display|grep Cus
  
- log:set DEBUG
- features:addurl mvn:ru.cinimex.learn/features/1.0-SNAPSHOT/xml/features
- features:install first_run
- list
- log:display|grep Cus
+### DEBUG KARAF 
  
- ### DEBUG KARAF 
+win+R cmd
+cd C:\jboss-fuse-6.3.0.redhat-254\bin
+karaf debug
  
- win+R cmd
- cd C:\jboss-fuse-6.3.0.redhat-254\bin
- karaf debug
- 
-  В Intellij Idea 
-  edit konfiguration( Там где мелньекое окошко около запуска и дебага) -> remoute -> + -> Исправь name ( например Karaf)
-  все ставим точки запускаем)
+В Intellij Idea 
+edit konfiguration( Там где мелньекое окошко около запуска и дебага) -> remoute -> + -> Исправь name ( например Karaf)
+все ставим точки запускаем)
  
  
 
@@ -63,6 +55,7 @@ features:listurl
 
 # Test
 http://localhost:8181/cxf
+2 SoapUi project в roject2 директории( воспользуйтесь ими для тестирвания)
 
 
 
