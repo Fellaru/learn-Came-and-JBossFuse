@@ -1,0 +1,70 @@
+<definitions name="phonebookWSDL"
+             targetNamespace="http://learn.cinimex.ru/PhonebookWS"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://learn.cinimex.ru/PhonebookWS"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <types>
+        <xsd:schema targetNamespace="http://learn.cinimex.ru/PhonebookWS"
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+            <xsd:element name="FIO">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="lastName" type="xsd:string"/>
+                        <xsd:element name="firstName" type="xsd:string"/>
+                        <xsd:element name="middleName" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+        </xsd:schema>
+    </types>
+
+
+    <message name="Request">
+        <part name="FIO" element="tns:FIO"/>
+    </message>
+
+    <message name="Response">
+        <part name="phone" type="xsd:string"/>
+    </message>
+
+    <portType name="IPhonebookWS">
+        <operation name="getPhoneByFIO">
+            <input message="tns:Request"/>
+            <output message="tns:Response"/>
+        </operation>
+    </portType>
+
+    <binding name="Name_Binding" type="tns:IPhonebookWS">
+        <soap:binding style="document"
+                      transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getPhoneByFIO">
+            <soap:operation soapAction="getPhoneByFIO"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="phonebook_ServiceClient">
+        <port binding="tns:Name_Binding" name="PhonebookWS">
+            <soap:address
+                    location="http://localhost:8181/cxf/phonebookWS"/>
+        </port>
+    </service>
+</definitions>
+<!--  transport="http://www.w3.org/2010/soapjms/"/>-->
+<!--"jms:jndi:GETPHONEBYFIO.INPUT?deliveryMode=NON_PERSISTENT&receiveTimout=5000&replyToName="jms:jndi:GETPHONEBYFIO.OUTPUT""-->
+<!--
+               location=
+                            "jms:jndi:dynamicQueues/GETPHONEBYFIO.INPUT"
+            + "?jndiInitialContextFactory=org.apache.activemq.jndi.ActiveMQInitialContextFactory"
+            +"&jndiConnectionFactoryName=ConnectionFactory"
+            +"&jndiURL=tcp://localhost:61616" />
+            -->
