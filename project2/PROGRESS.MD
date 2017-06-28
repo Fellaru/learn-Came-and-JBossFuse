@@ -17,7 +17,7 @@
 1. Работа с hibernate
 1. Работа с hibernate в fuse
 1. Работа с postgresql
-
+1. изменение регистра без удаления git mv -f FOO foo
 
 #Литература
 1. [Getting started guide.FUSE](https://access.redhat.com/documentation/en-us/red_hat_jboss_fuse/6.3/html/developing_and_deploying_applications/develop)

@@ -33,19 +33,14 @@
                         </xs:simpleType>
                     </xs:element>
                     <xs:element name="middleName" type="xs:string" minOccurs="0"/>
-                    <xs:element name="phone" type="phone_type" minOccurs="0">
-                    </xs:element>
+                    <xs:element name="phone" type="xs:long" minOccurs="0"/>
                     <xs:element name="email" type="xs:string" minOccurs="0"/>
                     <xs:element name="customer_id" type="xs:int" minOccurs="0"/>
                     <xs:element name="customer_status" type="xs:string" minOccurs="0"/>
                 </xs:sequence>
             </xs:complexType>
 
-            <xs:simpleType name="phone_type" >
-                <xs:restriction base="xs:long">
-                    <xs:pattern value="[7-8]{1}[0-9]{10}" />
-                </xs:restriction>
-            </xs:simpleType>
+
 
 
             <!--Customers-->
@@ -56,10 +51,11 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="phoneList">
+            <!--PhoneList-->
+            <xs:element name="PhoneList">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="phones" type="phone_type" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="phones" type="xs:long" minOccurs="0" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -86,20 +82,11 @@
         <part name="customersResult" element="cust:Customers"></part>
     </message>
 
-   <!--<message name="CreateException">
-        <part name="CreateCustomersEception" element="cust:CreateCustomersException"></part>
-    </message>-->
-   <!-- <message name="Error_CannotGetPhone">
-        <part name="Error_CannotGetPhone" element="cust:Error_CannotGetPhone"></part>
-    </message>-->
-
 
     <portType name="ICustomerWS">
         <operation name="createCustomer">
             <input message="tns:CreateCustomerRequest"></input>
             <output message="tns:CreateCustomerResponse"></output>
-            <!--<fault name="CreateException" message="tns:CreateException"></fault>-->
-            <!--<fault name="Error_CannotGetPhone" message="tns:Error_CannotGetPhone"></fault>-->
         </operation>
         <operation name="getCustomerByPhone">
             <input message="tns:getRequest"></input>
@@ -118,12 +105,6 @@
             <output>
                 <soap:body use="literal"/>
             </output>
-            <!--<fault name="CreateException" >
-                    <soap:body use="literal"/>
-            </fault>-->
-            <!--<fault name="Error_CannotGetPhone">
-                <soap:body use="literal"/>
-            </fault>-->
         </operation>
 
         <operation name="getCustomerByPhone">
