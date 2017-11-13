@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/blueprint/jaxws"
+           xmlns:cxf="http://cxf.apache.org/blueprint/core"
+
+
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
+                    http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.0.0 http://aries.apache.org/schemas/blueprint-cm/blueprint-cm-1.0.0.xsd
+                    http://cxf.apache.org/blueprint/jaxws http://cxf.apache.org/schemas/blueprint/jaxws.xsd
+                    http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd">
+
+
+    <!-- A normal CXF endpoint -->
+    <jaxws:endpoint id="sampleService" implementor="#CustomerWS"
+                    endpointName="s:CustomerWS" serviceName="s:Customer_ServiceClient" address="/CustomerWS"
+                    wsdlLocation="file:/C:/Users/efischenko/Desktop/efischenko-learning/project2/CustomerWS/src/main/resources/wsdl/customerWS.wsdl"
+                    xmlns:s="http://learn.cinimex.ru/CustomerWS/service">
+        <jaxws:properties>
+            <entry key="schema-validation-enabled" value="true"/>
+        </jaxws:properties>
+    </jaxws:endpoint>
+    <bean id="CustomerWS" class="ru.cinimex.learn.customerws.service.CustomerWSImpl"/>
+
+    <!--<bean id="CustomerDAO" class="CustomerDAO"/>
+    <service id="fd" interface="ICustoerDAO" ref="CustomerDAO"/>-->
+
+   <!-- <reference id="dao" interface="ICustoerDAO"/>-->
+</blueprint>

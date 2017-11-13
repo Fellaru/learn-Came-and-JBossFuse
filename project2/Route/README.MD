@@ -1,0 +1,1 @@
+install -s mvn:ru.cinimex.learn/Route/1.0-SNAPSHOT
