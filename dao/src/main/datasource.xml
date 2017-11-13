@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+First install the H2 driver using:
+> install -s mvn:com.h2database/h2/1.3.163
+Then copy this file to the deploy folder
+-->
+<!--TODO У меня тоже cамое-->
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+    <bean id="dataSource" class="org.h2.jdbcx.JdbcDataSource">
+        <property name="URL" value="jdbc:postgresql://localhost/;DB_CLOSE_DELAY=-1;MVCC=TRUE"/>
+        <property name="user" value="postgres"/>
+        <property name="password" value="1"/>
+    </bean>
+
+    <service interface="javax.sql.DataSource" ref="dataSource">
+        <service-properties>
+            <entry key="osgi.jndi.service.name" value="jdbc/psqlds"/><!--TODO What in my case-->
+        </service-properties>
+    </service>
+</blueprint>
